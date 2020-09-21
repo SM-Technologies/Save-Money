@@ -8,7 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-react": "^7.20.6",
     "next": "9.5.3",
+    "prettier": "^2.1.2",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   }
