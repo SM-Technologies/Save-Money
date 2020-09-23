@@ -12,15 +12,33 @@ export default function NavHeader() {
       <div className='nav-container'>
         <div className='nav-categories'>
           <span>
-            <img className='icon' src={Category} alt='' />
-            <p>CATEGORIES</p>
+            {/* <img className='icon' src={Category} alt='' />
+            <p>CATEGORIES</p> */}
+            <Link href=''>
+              <a>
+                <img className='icon' src={Category} alt='' />
+              </a>
+            </Link>
+            <Link href=''>
+              <a>
+                <p>CATEGORIES</p>
+              </a>
+            </Link>
           </span>
         </div>
 
         <div className='nav-store'>
           <span>
-            <img className='icon' src={Store} alt='' />
-            <p>STORE</p>
+            <Link href=''>
+              <a>
+                <img className='icon' src={Store} alt='' />
+              </a>
+            </Link>
+            <Link href=''>
+              <a>
+                <p>STORE</p>
+              </a>
+            </Link>
           </span>
         </div>
 
@@ -54,6 +72,11 @@ export default function NavHeader() {
         .nav-countries > ul > li {
           display: grid;
           grid-template: 1fr / 1fr 1fr;
+        }
+        span > a {
+          text-decoration: none;
+          cursor: pointer;
+          margin: auto;
         }
         img {
           margin: 0 auto;
