@@ -15,6 +15,8 @@ export default function Card() {
 
       <style jsx>{`
         .card-container {
+          display grid;
+          
           border: 1px solid var(--border-color);
           width: 200px;
           height: 300px;

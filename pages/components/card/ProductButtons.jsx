@@ -13,11 +13,9 @@ export default function ProductButtons() {
           </Link>
           <img src={Arrow} alt='' />
         </div>
-        <button>See Product</button>
         <Link href='' className='button'>
           <a> See Product</a>
         </Link>
-        <button> fjsdlfjñal</button>
       </div>
 
       <style jsx>{`
@@ -30,6 +28,7 @@ export default function ProductButtons() {
           background: var(--button-bg);
           border: 1px solid red;
           border-radius: 15px;
+          color: white;
         }
       `}</style>
 
