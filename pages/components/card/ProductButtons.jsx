@@ -14,7 +14,7 @@ export default function ProductButtons() {
           <img src={Arrow} alt='' />
         </div>
         <Link href='' className='button'>
-          <a> See Products</a>
+          <a> See Product</a>
         </Link>
       </div>
 
