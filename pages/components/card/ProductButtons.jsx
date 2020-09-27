@@ -14,7 +14,7 @@ export default function ProductButtons() {
           <img src={Arrow} alt='' />
         </div>
         <Link href='' className='button'>
-          <a> See Product</a>
+          <a> See Products</a>
         </Link>
       </div>
 
@@ -29,6 +29,7 @@ export default function ProductButtons() {
           border: 1px solid red;
           border-radius: 15px;
           color: white;
+          font-weight: 600;
         }
       `}</style>
 
