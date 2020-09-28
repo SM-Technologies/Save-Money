@@ -8,13 +8,15 @@ export default function ProductButtons() {
     <>
       <div className='button-container'>
         <div>
-          <Link href='' className='link'>
-            <a>Compare prices</a>
+          <Link href=''>
+            <a className='link'>
+              Compare prices &nbsp;
+              <img src={Arrow} alt='' />
+            </a>
           </Link>
-          <img src={Arrow} alt='' />
         </div>
-        <Link href='' className='button'>
-          <a> See Product</a>
+        <Link href=''>
+          <a className='button'> See Product </a>
         </Link>
       </div>
 
@@ -22,14 +24,30 @@ export default function ProductButtons() {
         .button-container > Link {
           height: 27px;
         }
+        .link,
         .button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 0.8em;
+          font-weight: 600;
           width: 100%;
           height: 27px;
+        }
+        .link {
+          color: var(--compare-color);
+        }
+        .link::link {
+          color: yellow;
+        }
+        .button {
           background: var(--button-bg);
-          border: 1px solid red;
           border-radius: 15px;
           color: white;
-          font-weight: 600;
+        }
+        .button::visited {
+          text-decoration: none;
+          color: var(--compare-color);
         }
       `}</style>
 

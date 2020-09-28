@@ -22,6 +22,7 @@ export default function Card() {
           height: 300px;
           padding: 0 10px;
           border-radius: 10px;
+          box-shadow:2px 5px .75em var(--border-color)
         }
       `}</style>
 
