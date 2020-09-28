@@ -17,9 +17,9 @@ export default function Header() {
         header {
           display: grid;
           grid-template: 1fr / 1fr 1.5fr 1.5fr 0.25fr;
-          /* height: 200px; */
-          /* width: 1100px; */
-          width: 100vw;
+          height: 100px;
+          width: 1100px;
+          /* width: 100vw; */
           position: absolute;
         }
       `}</style>
@@ -35,7 +35,6 @@ export default function Header() {
           margin: 0;
           padding: 0;
           box-sizing: border-box;
-          margin: 0 auto;
         }
       `}</style>
     </>
