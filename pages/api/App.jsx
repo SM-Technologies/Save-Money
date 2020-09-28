@@ -1,4 +1,4 @@
-export default (req, res) => {
+const allProducts = async (req, res) => {
   res.statusCode = 500;
   res.json({ userName: 'Vrime' });
 };
@@ -8,3 +8,5 @@ export default (req, res) => {
 //     .then(res => res.json()
 //     )
 // };
+
+export default allProducts;
