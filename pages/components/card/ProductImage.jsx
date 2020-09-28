@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Product from '../../../src/assets/images/Mac.png';
+import Product from '../../../src/assets/icons/imgDescription.svg';
 
 export default function Card() {
   return (
     <>
       <div className='product-container'>
-        <img src={Product} alt='' />
+        <img className='image' src={Product} alt='' />
       </div>
       <style jsx>{`
         .product-container {
@@ -14,6 +14,10 @@ export default function Card() {
           height: 104px;
           margin: 0 5%;
           align-items: center;
+        }
+        .image {
+          height: inherit;
+          width: inherit;
         }
       `}</style>
     </>
