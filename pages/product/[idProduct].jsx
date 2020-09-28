@@ -1,3 +1,5 @@
+const { default: PriceComparator } = require("../components/price-comparator/PriceComparator")
+
 const ProductDescription = () => {
   return (
     <>
@@ -36,6 +38,16 @@ const ProductDescription = () => {
         <button className="container__btn" type="button">SEE PRODUCT</button>
       </section>
       </div>
+      <section className="wrapper__comparator">
+        <h3>Price comparator</h3>
+        <div className="comparator">
+          <PriceComparator />
+          <PriceComparator />
+          <PriceComparator />
+          <PriceComparator />
+          <PriceComparator />
+        </div>
+      </section>
       <style jsx>{`
           .container{
             padding: 0px 50px;
@@ -91,6 +103,17 @@ const ProductDescription = () => {
           }
           .container__btn:hover{
             background-color: #00452A;
+          }
+          .wrapper__comparator{
+            padding: 0px 50px;
+          }
+          .comparator{
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+          }
+          .wrapper__comparator h3{
+            color: #F7B733;
           }
         `}</style>
     </>
