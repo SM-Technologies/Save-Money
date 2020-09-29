@@ -41,10 +41,14 @@ export default function InputHeader() {
           background: none;
           border: none;
           padding: 5px 5%;
+          outline: none;
+          font-size: 1em;
+          font-weight: 500;
+          color: rgba(62, 147, 193, 1);
         }
         .input-input::placeholder {
           font-weight: 500;
-          font-size: 1.25em;
+          font-size: 1.15em;
           color: rgba(62, 147, 193, 1);
         }
         .input-icon {
@@ -53,6 +57,7 @@ export default function InputHeader() {
           align-items: center;
           width: 10%;
           height: inherit;
+          cursor: pointer;
         }
         img {
           fill: rgba(62, 147, 193, 1);

@@ -7,20 +7,25 @@ import NavHeader from './NavHeader';
 export default function Header() {
   return (
     <>
-      <header>
-        <LogoHeader />
-        <InputHeader />
-        <NavHeader />
-      </header>
+      <div className='container'>
+        <header>
+          <LogoHeader />
+          <InputHeader />
+          <NavHeader />
+        </header>
+      </div>
 
       <style jsx>{`
+        .container {
+          height: 100px;
+          width: 100vw;
+        }
         header {
           display: grid;
           grid-template: 1fr / 1fr 1.5fr 1.5fr 0.25fr;
           height: 100px;
-          width: 1100px;
-          /* width: 100vw; */
-          position: absolute;
+          /* width: ; */
+          width: inherit;
         }
       `}</style>
 

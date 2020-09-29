@@ -16,13 +16,13 @@ export default function Card() {
       <style jsx>{`
         .card-container {
           display grid;
-          
+          place-self:center;
           border: 1px solid var(--border-color);
           width: 200px;
           height: 300px;
           padding: 0 10px;
           border-radius: 10px;
-          box-shadow:2px 5px .75em var(--border-color)
+          box-shadow:2px 2px .1em var(--border-color)
         }
       `}</style>
 

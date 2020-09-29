@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Product from '../../../src/assets/icons/imgDescription.svg';
+import Product from '../../../src/assets/images/Mac.png';
 
 export default function Card() {
   return (
@@ -12,7 +12,8 @@ export default function Card() {
         .product-container {
           width: 182px;
           height: 104px;
-          margin: 0 5%;
+          margin: 5px 5%;
+
           align-items: center;
         }
         .image {
