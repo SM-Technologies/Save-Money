@@ -24,6 +24,14 @@ export default function Card() {
           border-radius: 10px;
           box-shadow:2px 2px .1em var(--border-color)
         }
+
+        @media (max-width: 320px) {
+          .card-container {
+            height:inherit;
+            width:100%;
+            grid-template: 1fr auto /.75fr 1fr;
+          }
+        }
       `}</style>
 
       <style global jsx>{`

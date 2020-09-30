@@ -10,11 +10,9 @@ export default function Card() {
       </div>
       <style jsx>{`
         .product-container {
-          width: 182px;
-          height: 104px;
-          margin: 5px 5%;
-
-          align-items: center;
+          width: 100%;
+          height: auto;
+          margin: auto;
         }
         .image {
           height: inherit;

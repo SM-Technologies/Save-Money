@@ -71,14 +71,28 @@ export default function HomeContainer() {
         .offers-container {
           grid-area: offers;
           display: grid;
-          grid-template: 1fr / repeat(4, 1fr);
+          grid-template: 1fr / repeat(auto-fit, minmax(250px, 1fr));
           grid-gap: 5px;
         }
         .products-container {
           grid-area: products;
           display: grid;
-          grid-template: 1fr / repeat(4, 1fr);
+          grid-template: 1fr / repeat(auto-fit, minmax(250px, 1fr));
+          /* grid-template: 1fr / repeat(4, 1fr); */
           grid-gap: 10px;
+        }
+
+        @media (max-width: 320px) {
+          .home-container {
+            grid-template: 300px 50px 0.5fr 75px 1fr 50px / 1fr;
+            grid-template-areas:
+              'banner'
+              'title'
+              'offers'
+              'title2'
+              'products'
+              '.';
+          }
         }
       `}</style>
     </>
