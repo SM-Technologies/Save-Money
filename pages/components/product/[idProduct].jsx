@@ -1,4 +1,10 @@
-const { default: PriceComparator } = require("../components/price-comparator/PriceComparator")
+import  PriceComparator from  "../price-comparator/PriceComparator"
+
+import imgDescription from '../../../src/assets/images/descriptionPage/img-description.svg'
+import img1 from '../../../src/assets/images/descriptionPage/image1.svg'
+import img2 from '../../../src/assets/images/descriptionPage/image2.svg'
+import img3 from '../../../src/assets/images/descriptionPage/image3.svg'
+import img4 from '../../../src/assets/images/descriptionPage/image4.svg'
 
 const ProductDescription = () => {
   return (
@@ -6,12 +12,12 @@ const ProductDescription = () => {
     <div className="container">
       <section>
         <div>
-          <img src="/descriptionPage/imgDescription.svg" alt="Descripcion del producto" />
+          <img src={imgDescription} alt="Descripcion del producto" />
           <div className="container__img">
-            <img src="/descriptionPage/image1.svg" alt="Producto relacionado" />
-            <img src="/descriptionPage/image2.svg" alt="Producto relacionado" />
-            <img src="/descriptionPage/image3.svg" alt="Producto relacionado" />
-            <img src="/descriptionPage/image4.svg" alt="Producto relacionado" />
+            <img src={img1} alt="Producto relacionado" />
+            <img src={img2} alt="Producto relacionado" />
+            <img src={img3} alt="Producto relacionado" />
+            <img src={img4} alt="Producto relacionado" />
           </div>
           <div className="container__pricehistory">
             <span>Aqui iría el historial de precios</span>
@@ -114,6 +120,11 @@ const ProductDescription = () => {
           }
           .wrapper__comparator h3{
             color: #F7B733;
+          }
+          @media only screen and (max-width: 600px){
+            .wrapper__comparator{
+              padding: 0px 10px;
+            }
           }
         `}</style>
     </>

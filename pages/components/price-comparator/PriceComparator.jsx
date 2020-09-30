@@ -1,3 +1,4 @@
+import marca from '../../../src/assets/icons/Brands/ebay-ar21.svg'
 export default function PriceComparator() {
   return (
     <div className="container">
@@ -5,7 +6,7 @@ export default function PriceComparator() {
       <p className="container__price">1,192.57</p>
       <p className="container__delivery">Delivery time: 7-8 working days</p>
       <div>
-        <img className="container__img" src="/ebay-ar21.svg" alt="logo-plataforma" />
+        <img className="container__img" src={marca} alt="logo-plataforma" />
         <span className="container__opinions">19 opiniones</span>
       </div>
       <div className="container__btn">
@@ -56,6 +57,12 @@ export default function PriceComparator() {
           }
           .container__btn button:hover{
             background-color: #00452A;
+          }
+          @media only screen and (max-width: 600px){
+            .container{
+              display: block;
+              width: 100%;
+            }
           }
         `}</style>
     </div>
