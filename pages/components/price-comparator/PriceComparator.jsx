@@ -58,6 +58,14 @@ export default function PriceComparator() {
           .container__btn button:hover{
             background-color: #00452A;
           }
+          @media only screen and (max-width: 768px){
+            .container__price{
+              font-size: 20px;
+            }
+            .container__btn button{
+              width: 120px;
+            }
+          }
           @media only screen and (max-width: 600px){
             .container{
               display: block;
