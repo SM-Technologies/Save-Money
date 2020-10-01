@@ -1,18 +1,18 @@
 import React from "react";
 import Link from "next/link";
-import LogoWhite from "../../../src/assets/images/samotech-logo-white.svg";
-import LogoInstagram from "../../../src/assets/images/instagram.svg";
-import LogoFacebook from "../../../src/assets/images/facebook.svg";
-import LogoTwitter from "../../../src/assets/images/twitter.svg";
-import LogoWorlwide from "../../../src/assets/images/worlwide.svg";
-import LogoMonedas from "../../../src/assets/images/monedas-del-pais.svg";
-import LogoVerificado from "../../../src/assets/images/verificado.svg";
-import LogoAvailability from "../../../src/assets/images/availability.svg";
-import LogoBusqueda from "../../../src/assets/images/busqueda.svg";
-import LogoAli from "../../../src/assets/images/logo-ali-express.svg";
-import LogoAmazon from "../../../src/assets/images/logo-amazon.svg";
-import LogoEbay from "../../../src/assets/images/logo-ebay.svg";
-import LogoMercado from "../../../src/assets/images/logo-mercado-libre.svg";
+import LogoWhite from "../../src/assets/images/samotech-logo-white.svg";
+import LogoInstagram from "../../src/assets/images/instagram.svg";
+import LogoFacebook from "../../src/assets/images/facebook.svg";
+import LogoTwitter from "../../src/assets/images/twitter.svg";
+import LogoWorlwide from "../../src/assets/images/worlwide.svg";
+import LogoMonedas from "../../src/assets/images/monedas-del-pais.svg";
+import LogoVerificado from "../../src/assets/images/verificado.svg";
+import LogoAvailability from "../../src/assets/images/availability.svg";
+import LogoBusqueda from "../../src/assets/images/busqueda.svg";
+import LogoAli from "../../src/assets/images/logo-ali-express.svg";
+import LogoAmazon from "../../src/assets/images/logo-amazon.svg";
+import LogoEbay from "../../src/assets/images/logo-ebay.svg";
+import LogoMercado from "../../src/assets/images/logo-mercado-libre.svg";
 
 const Footer = () => {
   return (
@@ -71,95 +71,95 @@ const Footer = () => {
         <div className="text_prices">Compare Prices of:</div>
         <div className="logos__stores">
           <a href="https://www.aliexpress.com/" target="_blank">
-            <img src={LogoAli} alt="Logo Ali Express">
+            <img src={LogoAli} alt="Logo Ali Express" />
           </a>
         </div>
 
         <div className="logos__stores">
           <a href="https://www.amazon.com/" target="_blank">
-            <img src={LogoAmazon} alt="Logo Amazon">
+            <img src={LogoAmazon} alt="Logo Amazon" />
           </a>
         </div>
 
         <div className="logos__stores">
           <a href="https://www.ebay.com" target="_blank">
-            <img src={LogoEbay} alt="Logo ebay">
+            <img src={LogoEbay} alt="Logo ebay" />
           </a>
         </div>
 
         <div className="logos__stores">
           <a href="https://www.mercadolibre.com.co" target="_blank">
-            <img src={LogoMercado} alt="Logo Mercado Libre">
+            <img src={LogoMercado} alt="Logo Mercado Libre" />
           </a>
         </div>
       </section>
 
       {/* Footer */}
       <footer>
-        <ul className='footer__logo uno'>
+        <ul className="footer__logo uno">
           <li>
-            <a href='#'>
-              <img src={LogoWhite} alt='Logo Samotex' height='50' />
+            <a href="#">
+              <img src={LogoWhite} alt="Logo Samotex" height="50" />
             </a>
           </li>
         </ul>
-        <ul className='footer__menu dos'>
-          <li className='text__menu--footer'>
-            <Link href=''>
+        <ul className="footer__menu dos">
+          <li className="text__menu--footer">
+            <Link href="">
               <a>Nosotros</a>
             </Link>
           </li>
-          <li className='text__menu--footer'>
-            <Link href=''>
+          <li className="text__menu--footer">
+            <Link href="">
               <a>Políticas</a>
             </Link>
           </li>
-          <li className='text__menu--footer'>
-            <Link href=''>
+          <li className="text__menu--footer">
+            <Link href="">
               <a>Términos de uso</a>
             </Link>
           </li>
-          <li className='text__menu--footer'>
-            <Link href=''>
+          <li className="text__menu--footer">
+            <Link href="">
               <a>Contacto</a>
             </Link>
           </li>
         </ul>
-        <ul className='footer__social tres'>
-          <li className='text__social'>
-            <Link href='' target='_blank'>
+        <ul className="footer__social tres">
+          <li className="text__social">
+            <Link href="" target="_blank">
               <a>
-                <img className='' src={LogoTwitter} width='20' alt='Twitter' />
+                <img className="" src={LogoTwitter} width="20" alt="Twitter" />
                 <p>Twitter</p>
               </a>
             </Link>
           </li>
 
-          <li className='text__social'>
-            <Link href='https://www.instagram.com/' target='_blank'>
+          <li className="text__social">
+            <Link href="https://www.instagram.com/" target="_blank">
               <a>
                 <img
-                  className=''
+                  className=""
                   src={LogoInstagram}
-                  width='20'
-                  alt='Instagram'
+                  width="20"
+                  alt="Instagram"
                 />
                 <p>Instagram</p>
               </a>
             </Link>
           </li>
 
-          <li className='text__social'>
-            <Link href='https://www.facebook.com/' target='_blank'>
+          <li className="text__social">
+            <Link href="https://www.facebook.com/" target="_blank">
               <a>
-                <img src={LogoFacebook} width='20' alt='Facebook' />
+                <img src={LogoFacebook} width="20" alt="Facebook" />
                 <p>Facebook</p>
               </a>
             </Link>
           </li>
         </ul>
 
-        <div className='copyright'>
+        <div className="copyright">
           Copyright © 2020. Todos derechos reservados
         </div>
       </footer>
@@ -183,7 +183,7 @@ const Footer = () => {
         }
         footer {
           width: 100vw;
-          position: absolute;
+          /* position: absolute; */
           bottom: 0;
           display: grid;
           grid-template: 10fr / repeat(3, 1fr);
@@ -198,7 +198,7 @@ const Footer = () => {
         footer p {
           margin: 0;
           padding: 0;
-          font-family: 'Open Sans', sans-serif;
+          font-family: "Open Sans", sans-serif;
         }
 
         footer a {
@@ -210,7 +210,7 @@ const Footer = () => {
           list-style: none;
           display: flex;
           justify-content: center;
-          font-family: 'Open Sans', sans-serif;
+          font-family: "Open Sans", sans-serif;
         }
 
         footer .text__menu--footer {
@@ -262,7 +262,7 @@ const Footer = () => {
         .main__characteristics {
           max-width: 1100px;
           margin: 0 auto;
-          /*  height: 150px; */
+          height: 150px;
           color: black;
           display: flex;
           justify-content: space-around;
@@ -287,6 +287,35 @@ const Footer = () => {
           color: #3e93c1;
         }
 
+        .text_prices {
+          color: #f7b733;
+          margin-bottom: 30px;
+        }
+
+        .stores {
+          margin: 0 auto;
+          text-align: center;
+          padding: 40px;
+        }
+
+        .logos__stores {
+          display: contents;
+          display: contents;
+          margin: 0 auto;
+          transition: all 300ms;
+          display: inline-block;
+        }
+
+        .logos__stores:hover {
+          transform: scale(1.15);
+        }
+
+        .stores .logos__stores img {
+          width: 50%;
+          height: 50%;
+          max-width: 840px;
+        }
+
         /* responsive */
         @media screen and (max-width: 1024px) {
           footer {
@@ -302,7 +331,14 @@ const Footer = () => {
           /*characteristics*/
           .main__characteristics {
             max-width: 840px;
-            margin-top: 200px;
+          }
+          .logos__stores {
+            display: inline;
+          }
+          .stores .logos__stores img {
+            width: 20%;
+            /* height: 50%; */
+            max-width: 840px;
           }
         }
 
@@ -340,7 +376,6 @@ const Footer = () => {
           .main__characteristics {
             max-width: 640px;
             height: 90px;
-            margin-top: 200px;
           }
           .txt__box {
             font-size: 12px;
@@ -406,10 +441,12 @@ const Footer = () => {
           .main__characteristics {
             max-width: 400px;
             height: 90px;
-            margin-top: 120px;
           }
           .txt__box {
             font-size: 10px;
+          }
+          .stores .logos__stores img {
+            width: 90%;
           }
         }
 

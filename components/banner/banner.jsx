@@ -6,24 +6,22 @@ const Banner = () => {
   return (
     <>
       {/* Banner */}
-      <section class="banner">
-        <div class="container">
+      <section className="banner">
+        <div className="container">
           <h1>Online Shopping</h1>
           <h2>Online price and offers comparator</h2>
           <p>
             Find that offer that you were looking for so much. Every second, we
             select and compare thousands of offers from the best brands.
           </p>
-          <div class="button__banner">
-            <a class="text__button" href="#">
-              SHOP NOW
-            </a>
+          <div className="button__banner">
+            <Link>
+              <a className="text__button" href="#">
+                SHOP NOW
+              </a>
+            </Link>
           </div>
-          <img
-            class="banner__image"
-            src="images/banner.png"
-            alt="Principal image"
-          />
+          <img className="banner__image" src={Banner} alt="Principal image" />
         </div>
       </section>
 
