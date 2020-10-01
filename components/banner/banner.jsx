@@ -1,6 +1,5 @@
 import React from "react";
-import Link from "next/link";
-import Banner from "../../../src/assets/images/banner.png";
+import BannerImg from "../../src/assets/images/banner.png";
 
 const Banner = () => {
   return (
@@ -15,13 +14,11 @@ const Banner = () => {
             select and compare thousands of offers from the best brands.
           </p>
           <div className="button__banner">
-            <Link>
-              <a className="text__button" href="#">
+              <a className="text__button" href="#products">
                 SHOP NOW
               </a>
-            </Link>
           </div>
-          <img className="banner__image" src={Banner} alt="Principal image" />
+          <img className="banner__image" src={BannerImg} alt="Principal image" />
         </div>
       </section>
 

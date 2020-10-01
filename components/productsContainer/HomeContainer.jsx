@@ -1,14 +1,14 @@
 import React from 'react';
 
 import Cards from '../card/CardProduct';
-import mac from '../../src/assets/images/Mac.png';
+import Banner from '../banner/banner';
 
 export default function HomeContainer() {
   return (
     <>
       <div className='home__container'>
         <div className='banner__container'>
-          <img src={mac} alt='' />
+          <Banner />
         </div>
         <div className='title__container'>
           <h2>Offers of the week</h2>
@@ -22,7 +22,7 @@ export default function HomeContainer() {
         <div className='title2__container'>
           <h2>All Products</h2>
         </div>
-        <div className='products__container'>
+        <section id="products" className='products__container'>
           <Cards />
           <Cards />
           <Cards />
@@ -31,7 +31,7 @@ export default function HomeContainer() {
           <Cards />
           <Cards />
           <Cards />
-        </div>
+        </section>
       </div>
 
       <style jsx>{`
