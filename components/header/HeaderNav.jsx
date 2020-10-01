@@ -1,19 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 
-import Category from '../../../src/assets/icons/cuadrado.svg';
-import Store from '../../../src/assets/icons/compras.svg';
-import Country from '../../../src/assets/icons/Brands/mexico.svg';
-import Arrow from '../../../src/assets/icons/arrow-down.svg';
+import Category from '../../src/assets/icons/cuadrado.svg';
+import Store from '../../src/assets/icons/compras.svg';
+import Country from '../../src/assets/icons/Brands/mexico.svg';
+import Arrow from '../../src/assets/icons/arrow-down.svg';
 
 export default function NavHeader() {
   return (
     <>
-      <div className='nav-container'>
-        <div className='nav-categories'>
+      <div className='nav__container'>
+        <div className='nav__categories'>
           <span>
-            {/* <img className='icon' src={Category} alt='' />
-            <p>CATEGORIES</p> */}
             <Link href=''>
               <a>
                 <img className='icon' src={Category} alt='' />
@@ -27,7 +25,7 @@ export default function NavHeader() {
           </span>
         </div>
 
-        <div className='nav-store'>
+        <div className='nav__store'>
           <span>
             <Link href=''>
               <a>
@@ -42,34 +40,37 @@ export default function NavHeader() {
           </span>
         </div>
 
-        <div className='nav-countries'>
+        <div className='nav__countries'>
           <ul>
             <li>
               <img className='icon' src={Country} alt='' />
-              <img className='icon arrow' src={Arrow} alt='' />
+              <img className='icon icon--arrow' src={Arrow} alt='' />
             </li>
           </ul>
         </div>
       </div>
 
       <style jsx>{`
-        .nav-container {
+        .nav__container {
           display: grid;
-          grid-template: 1fr / 1fr 1fr 0.5fr;
+          grid-template: 1fr / 1fr 1fr;
           font-family: 'Oxygen', sans-serif;
           color: var(--text-menu);
           font-weight: 600;
         }
-        .nav-categories,
-        .nav-store,
-        .nav-countries {
+        .nav__categories,
+        .nav__store,
+        .nav__countries {
           display: flex;
           justify-content: center;
           align-items: center;
         }
 
+        .nav__categories {
+          display: none;
+        }
         span,
-        .nav-countries > ul > li {
+        .nav__countries > ul > li {
           display: grid;
           grid-template: 1fr / 1fr 1fr;
         }
@@ -87,7 +88,7 @@ export default function NavHeader() {
         .icon {
           height: 30px;
         }
-        .arrow {
+        .icon--arrow {
           height: 10px;
           margin: auto;
         }
@@ -96,6 +97,27 @@ export default function NavHeader() {
           list-style: none;
           margin: 0;
           padding: 0;
+        }
+
+        @media (max-width: 320px) {
+          .nav__container {
+            grid-area: categorie;
+            grid-template: 1fr / 1fr;
+          }
+          .nav__categories {
+            display: flex;
+            margin: auto;
+          }
+          .nav__categories > span {
+            grid-template: none;
+          }
+          .nav__categories > span > a > p {
+            display: none;
+          }
+          .nav__store,
+          .nav__countries {
+            display: none;
+          }
         }
       `}</style>
     </>
