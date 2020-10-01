@@ -1,4 +1,3 @@
-<<<<<<< HEAD:pages/components/footer/Footer.jsx
 import React from "react";
 import Link from "next/link";
 import LogoWhite from "../../../src/assets/images/samotech-logo-white.svg";
@@ -14,14 +13,6 @@ import LogoAli from "../../../src/assets/images/logo-ali-express.svg";
 import LogoAmazon from "../../../src/assets/images/logo-amazon.svg";
 import LogoEbay from "../../../src/assets/images/logo-ebay.svg";
 import LogoMercado from "../../../src/assets/images/logo-mercado-libre.svg";
-=======
-import React from 'react';
-import Link from 'next/link';
-import LogoWhite from '../../src/assets/images/samotech-logo-white.svg';
-import LogoInstagram from '../../src/assets/images/instagram.svg';
-import LogoFacebook from '../../src/assets/images/facebook.svg';
-import LogoTwitter from '../../src/assets/images/twitter.svg';
->>>>>>> f6bf91e97d59115b34f5c7a151871574e748a452:components/footer/Footer.jsx
 
 const Footer = () => {
   return (
@@ -192,23 +183,13 @@ const Footer = () => {
         }
         footer {
           width: 100vw;
-<<<<<<< HEAD:pages/components/footer/Footer.jsx
           position: absolute;
-=======
-
-          /* height: 90px; */
->>>>>>> f6bf91e97d59115b34f5c7a151871574e748a452:components/footer/Footer.jsx
           bottom: 0;
           display: grid;
           grid-template: 10fr / repeat(3, 1fr);
           grid-template-areas:
-<<<<<<< HEAD:pages/components/footer/Footer.jsx
             "logo menu social"
             "copyright copyright copyright";
-=======
-            'logo menu social'
-            'copy copy copy ';
->>>>>>> f6bf91e97d59115b34f5c7a151871574e748a452:components/footer/Footer.jsx
           align-items: center;
           font-size: 16px;
           background-color: #3e93c1;
@@ -269,18 +250,13 @@ const Footer = () => {
         }
 
         .copyright {
-<<<<<<< HEAD:pages/components/footer/Footer.jsx
           grid-area: copyright;
-=======
-          grid-area: copy;
->>>>>>> f6bf91e97d59115b34f5c7a151871574e748a452:components/footer/Footer.jsx
           width: 100%;
           text-align: center;
           color: white;
           font-size: 12px;
           margin-bottom: 10px;
           display: inline-block;
-<<<<<<< HEAD:pages/components/footer/Footer.jsx
         }
         /* characteristics  */
         .main__characteristics {
@@ -474,9 +450,6 @@ const Footer = () => {
             width: 70%;
             height: 70%;
           }
-=======
-          /* margin-left: 650px; */
->>>>>>> f6bf91e97d59115b34f5c7a151871574e748a452:components/footer/Footer.jsx
         }
       `}</style>
     </>
