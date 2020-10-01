@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-import LogoWhite from '../../../src/assets/images/samotech-logo-white.svg';
-import LogoInstagram from '../../../src/assets/images/instagram.svg';
-import LogoFacebook from '../../../src/assets/images/facebook.svg';
-import LogoTwitter from '../../../src/assets/images/twitter.svg';
+import LogoWhite from '../../src/assets/images/samotech-logo-white.svg';
+import LogoInstagram from '../../src/assets/images/instagram.svg';
+import LogoFacebook from '../../src/assets/images/facebook.svg';
+import LogoTwitter from '../../src/assets/images/twitter.svg';
 
 const Footer = () => {
   return (
