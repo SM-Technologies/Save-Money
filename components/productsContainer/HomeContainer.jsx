@@ -52,13 +52,10 @@ const HomeContainer = (props) => {
           <Cards />
           <Cards />
           <Cards />
-
-        </section>
-
           {/* {dataProducts.map((prod, index) => (
             <>{index >= 4 ? null : <Cards data={prod} />}</>
           ))} */}
-        </div>
+        </section>
       </div>
 
       <style jsx>{`
