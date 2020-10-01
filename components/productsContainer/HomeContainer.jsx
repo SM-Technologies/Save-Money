@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 
 import Cards from '../card/CardProduct';
-import Banner from '../banner/banner';
 
-export default function HomeContainer() {
+import Banner from '../banner/banner';
+import mac from '../../src/assets/images/Mac.png';
+import { getOffProducts, getProducts, getProductByName } from '../../redux/actions/productsActions';
+
+const HomeContainer = (props) => {
+  
+  const {  offerProducts, dataProducts } = props;
+
+  const getProds = async () => {
+    await props.getOffProducts();
+    await props.getProducts();
+  };
+
+  // useEffect(() => {
+  //     getProds();
+  // }, [offerProducts.lenght]);
+  // if (!dataProducts || !offerProducts) {
+  //   return '';
+  // }
   return (
     <>
       <div className='home__container'>
@@ -18,6 +36,9 @@ export default function HomeContainer() {
           <Cards />
           <Cards />
           <Cards />
+            {/* {offerProducts.map((prod, index) => (
+            <>{index >= 4 ? null : <Cards data={prod} />}</>
+          ))} */}
         </div>
         <div className='title2__container'>
           <h2>All Products</h2>
@@ -31,7 +52,13 @@ export default function HomeContainer() {
           <Cards />
           <Cards />
           <Cards />
+
         </section>
+
+          {/* {dataProducts.map((prod, index) => (
+            <>{index >= 4 ? null : <Cards data={prod} />}</>
+          ))} */}
+        </div>
       </div>
 
       <style jsx>{`
@@ -110,3 +137,13 @@ export default function HomeContainer() {
     </>
   );
 }
+
+const mapStateToProps = ({ productsReducer }) => productsReducer;
+
+const mapDispatchToProps = {
+  getOffProducts,
+  getProducts,
+  getProductByName
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);
