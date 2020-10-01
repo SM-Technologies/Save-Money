@@ -7,7 +7,7 @@ const INITIAL_STATE = {
   productByName: '',
 };
 
-export default (state = INITIAL_STATE, action) => {
+const productsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'DATA_OFF_PRODUCTS':
       return {
@@ -41,3 +41,5 @@ export default (state = INITIAL_STATE, action) => {
       return state;
   }
 };
+
+export default productsReducer;

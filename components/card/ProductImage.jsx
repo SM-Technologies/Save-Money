@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Product from '../../src/assets/images/Mac.png';
-
+// const {urlImage} = data;
 export default function Card() {
   return (
     <>
