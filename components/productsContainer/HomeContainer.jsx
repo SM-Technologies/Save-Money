@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import Cards from '../card/CardProduct';
+
+import Banner from '../banner/banner';
 import mac from '../../src/assets/images/Mac.png';
 import { getOffProducts, getProducts, getProductByName } from '../../redux/actions/productsActions';
 
@@ -24,7 +26,7 @@ const HomeContainer = (props) => {
     <>
       <div className='home__container'>
         <div className='banner__container'>
-          <img src={mac} alt='' />
+          <Banner />
         </div>
         <div className='title__container'>
           <h2>Offers of the week</h2>
@@ -41,7 +43,7 @@ const HomeContainer = (props) => {
         <div className='title2__container'>
           <h2>All Products</h2>
         </div>
-        <div className='products__container'>
+        <section id="products" className='products__container'>
           <Cards />
           <Cards />
           <Cards />
@@ -50,6 +52,9 @@ const HomeContainer = (props) => {
           <Cards />
           <Cards />
           <Cards />
+
+        </section>
+
           {/* {dataProducts.map((prod, index) => (
             <>{index >= 4 ? null : <Cards data={prod} />}</>
           ))} */}
