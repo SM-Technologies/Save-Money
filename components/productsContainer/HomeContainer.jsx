@@ -1,14 +1,15 @@
 import React from 'react';
 
 import Cards from '../card/CardProduct';
-import mac from '../../src/assets/images/Mac.png';
+// import mac from '../../src/assets/images/banner-02 1.png';
+import Banner from '../banner/Banner';
 
 export default function HomeContainer() {
   return (
     <>
       <div className='home__container'>
         <div className='banner__container'>
-          <img src={mac} alt='' />
+          <Banner />
         </div>
         <div className='title__container'>
           <h2>Offers of the week</h2>
@@ -74,7 +75,7 @@ export default function HomeContainer() {
           grid-area: offers;
           display: grid;
           grid-template: 1fr / repeat(auto-fit, minmax(250px, 1fr));
-          grid-gap: 5px;
+          grid-gap: 15px 5px;
           width: 100%;
         }
         .products__container {
@@ -82,7 +83,7 @@ export default function HomeContainer() {
           display: grid;
           grid-template: 1fr / repeat(auto-fit, minmax(250px, 1fr));
           /* grid-template: 1fr / repeat(4, 1fr); */
-          grid-gap: 10px;
+          grid-gap: 15px 5px;
           width: 100%;
         }
 
@@ -101,7 +102,6 @@ export default function HomeContainer() {
           grid-area: offers;
           display: grid;
           grid-template: 1fr / repeat(auto-fit, minmax(250px, 1fr));
-          grid-gap: 5px;
         }
         .products__container {
 

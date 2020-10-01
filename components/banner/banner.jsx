@@ -1,27 +1,25 @@
-import React from "react";
-import Link from "next/link";
-import Banner from "../../../src/assets/images/banner.png";
+import React from 'react';
+import Link from 'next/link';
+import Ban from '../../src/assets/images/banner.png';
 
-const Banner = () => {
+export default function Banner() {
   return (
     <>
       {/* Banner */}
-      <section className="banner">
-        <div className="container">
+      <section className='banner'>
+        <div className='container'>
           <h1>Online Shopping</h1>
           <h2>Online price and offers comparator</h2>
           <p>
             Find that offer that you were looking for so much. Every second, we
             select and compare thousands of offers from the best brands.
           </p>
-          <div className="button__banner">
-            <Link>
-              <a className="text__button" href="#">
-                SHOP NOW
-              </a>
+          <div className='button__banner'>
+            <Link href='#'>
+              <a className='text__button'>SHOP NOW</a>
             </Link>
           </div>
-          <img className="banner__image" src={Banner} alt="Principal image" />
+          <img className='banner__image' src={Ban} alt='Principal image' />
         </div>
       </section>
 
@@ -44,7 +42,7 @@ const Banner = () => {
 
         .container {
           max-width: 1100px;
-          width: 100%;
+          /* width: 100%; */
           flex: 1;
           margin: 0 auto;
           display: inherit;
@@ -52,6 +50,9 @@ const Banner = () => {
           height: inherit;
           flex-wrap: inherit;
           overflow: auto;
+        }
+        .container::-webkit-scrollbar {
+          background: transparent;
         }
 
         h1 {
@@ -251,6 +252,4 @@ const Banner = () => {
       `}</style>
     </>
   );
-};
-
-export default Banner;
+}

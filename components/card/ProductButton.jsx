@@ -6,7 +6,7 @@ import Arrow from '../../src/assets/icons/arrow-right.svg';
 export default function ProductButtons() {
   return (
     <>
-      <Link href=''>
+      <Link href='product/1'>
         <a className='button'> See Product </a>
       </Link>
 
