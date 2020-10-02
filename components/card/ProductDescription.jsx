@@ -34,6 +34,7 @@ export default function ProductDescription() {
         }
         .details__container {
           color: var(--text-color);
+          padding: 0 2.5%;
         }
         .details__container > h2 {
           font-size: 0.8em;
@@ -75,10 +76,11 @@ export default function ProductDescription() {
           font-size: 0.75em;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 504px) {
           .details__container {
             grid-area: contenido;
             place-self: center;
+            padding: 0;
           }
         }
       `}</style>

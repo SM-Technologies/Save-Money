@@ -26,13 +26,14 @@ export default function Header() {
           grid-template: 1fr / 1fr 1.5fr 1.5fr;
           height: 100px;
         }
-        @media (max-width: 320px) {
+        @media (max-width: 768px) {
           header {
             grid-template: 1fr 1fr / 0.25fr 1fr 0.25fr;
             grid-template-areas:
               'categorie logo .'
-              '. input .';
+              'input input input';
             height: 100px;
+            border-bottom: 1px solid var(--input-bg);
           }
         }
       `}</style>

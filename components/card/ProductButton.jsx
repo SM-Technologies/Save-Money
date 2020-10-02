@@ -30,10 +30,11 @@ export default function ProductButtons() {
           color: var(--compare-color);
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 504px) {
           .button {
             grid-area: see-product;
             place-self: center;
+            width: 90%;
           }
         }
       `}</style>

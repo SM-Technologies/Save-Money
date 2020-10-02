@@ -99,7 +99,7 @@ export default function NavHeader() {
           padding: 0;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 768px) {
           .nav__container {
             grid-area: categorie;
             grid-template: 1fr / 1fr;

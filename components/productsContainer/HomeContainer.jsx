@@ -56,7 +56,6 @@ const HomeContainer = (props) => {
           <Cards />
           <Cards />
         </section>
-
         {/* {dataProducts.map((prod, index) => (
             <>{index >= 4 ? null : <Cards data={prod} />}</>
           ))} */}
@@ -111,10 +110,11 @@ const HomeContainer = (props) => {
           width: 100%;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 768px) {
           .home__container {
-            grid-template: 300px 50px 0.5fr 75px 1fr 50px / 1fr;
+            grid-template: 10px 150px 50px 0.5fr 75px 1fr 50px / 1fr;
             grid-template-areas:
+              '.'
               'banner'
               'title'
               'offers'

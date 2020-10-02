@@ -23,7 +23,7 @@ export default function Logo() {
           width: 175px;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 768px) {
           .logo__container {
             grid-area: logo;
           }

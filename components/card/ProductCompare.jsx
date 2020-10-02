@@ -29,7 +29,7 @@ export default function ProductCompare() {
           color: yellow;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 504px) {
           .link {
             grid-area: compare;
             place-self: center;

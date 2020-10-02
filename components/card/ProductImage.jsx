@@ -22,6 +22,7 @@ export default function Card() {
         @media (max-width: 320px) {
           .product__container {
             grid-area: image;
+            padding: 0 5px;
           }
         }
       `}</style>

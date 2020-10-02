@@ -64,9 +64,26 @@ export default function InputHeader() {
           height: 50%;
         }
 
-        @media (max-width: 320px) {
+        @media (max-width: 768px) {
           .input__container {
             grid-area: input;
+            margin: 0 5%;
+          }
+          .input__input {
+            width: 90%;
+            height: inherit;
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 0.75em;
+            font-weight: 500;
+            color: rgba(62, 147, 193, 1);
+          }
+          .input__input::placeholder {
+            font-size: 0.75em;
+          }
+          .input__icon {
+            width: 30%;
           }
         }
       `}</style>
