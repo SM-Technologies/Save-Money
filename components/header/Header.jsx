@@ -1,8 +1,8 @@
 import React from 'react';
 
-import LogoHeader from './Logo';
-import InputHeader from './InputHeader';
-import NavHeader from './NavHeader';
+import LogoHeader from './HeaderLogo';
+import InputHeader from './HeaderInput';
+import NavHeader from './HeaderNav';
 
 export default function Header() {
   return (
@@ -18,14 +18,22 @@ export default function Header() {
       <style jsx>{`
         .container {
           height: 100px;
-          width: 100vw;
+          max-width: 1100px;
+          margin: 0 auto;
         }
         header {
           display: grid;
-          grid-template: 1fr / 1fr 1.5fr 1.5fr 0.25fr;
+          grid-template: 1fr / 1fr 1.5fr 1.5fr;
           height: 100px;
-          /* width: ; */
-          width: inherit;
+        }
+        @media (max-width: 320px) {
+          header {
+            grid-template: 1fr 1fr / 0.25fr 1fr 0.25fr;
+            grid-template-areas:
+              'categorie logo .'
+              '. input .';
+            height: 100px;
+          }
         }
       `}</style>
 

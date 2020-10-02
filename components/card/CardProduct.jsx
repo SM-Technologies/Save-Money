@@ -2,34 +2,41 @@ import React from 'react';
 
 import ProductImage from './ProductImage';
 import ProductDescription from './ProductDescription';
-import ProductButtons from './ProductButtons';
+import ProductCompare from './ProductCompare';
+import ProductButton from './ProductButton';
 
 export default function Card() {
+  // const {urlImage, name, salePrice, description} = data;
   return (
     <>
-      <div className='card-container'>
+      <div className='card__container'>
         <ProductImage />
         <ProductDescription />
-        <ProductButtons />
+        <ProductCompare />
+        <ProductButton />
       </div>
 
       <style jsx>{`
-        .card-container {
+        .card__container {
           display grid;
           place-self:center;
           border: 1px solid var(--border-color);
           width: 200px;
           height: 300px;
-          padding: 0 10px;
+          padding: 5px 10px;
           border-radius: 10px;
           box-shadow:2px 2px .1em var(--border-color)
         }
 
-        @media (max-width: 320px) {
-          .card-container {
+        @media (max-width: 504px) {
+          .card__container {
             height:inherit;
             width:100%;
-            grid-template: 1fr auto /.75fr 1fr;
+            grid-template: 1fr 37px /.75fr 1fr;
+            grid-template-areas:
+            'image contenido'
+            'compare see-product';
+            padding:5px;
           }
         }
       `}</style>
@@ -49,6 +56,10 @@ export default function Card() {
           padding: 0;
           box-sizing: border-box;
           font-family: 'Open Sans', sans-serif;
+        }
+
+        a {
+          text-decoration: none;
         }
       `}</style>
     </>

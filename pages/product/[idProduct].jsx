@@ -1,49 +1,49 @@
-import PriceComparator from "../price-comparator/PriceComparator";
-import Header from '../header/Header';
-import Footer from '../footer/Footer';
-import imgDescription from "../../../src/assets/images/descriptionPage/img-description.svg";
-import img1 from "../../../src/assets/images/descriptionPage/image1.svg";
-import img2 from "../../../src/assets/images/descriptionPage/image2.svg";
-import img3 from "../../../src/assets/images/descriptionPage/image3.svg";
-import img4 from "../../../src/assets/images/descriptionPage/image4.svg";
+import PriceComparator from '../../components/price-comparator/PriceComparator';
+import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
+import imgDescription from '../../src/assets/images/descriptionPage/img-description.svg';
+import img1 from '../../src/assets/images/descriptionPage/image1.svg';
+import img2 from '../../src/assets/images/descriptionPage/image2.svg';
+import img3 from '../../src/assets/images/descriptionPage/image3.svg';
+import img4 from '../../src/assets/images/descriptionPage/image4.svg';
 
 const ProductDescription = () => {
   return (
     <>
-    <Header />
-      <div className="container">
+      <Header />
+      <div className='container'>
         <section>
           <div>
             <img
-              className="imgDescription"
+              className='imgDescription'
               src={imgDescription}
-              alt="Descripcion del producto"
+              alt='Descripcion del producto'
             />
-            <div className="container__img">
-              <img src={img1} alt="Producto relacionado" />
-              <img src={img2} alt="Producto relacionado" />
-              <img src={img3} alt="Producto relacionado" />
-              <img src={img4} alt="Producto relacionado" />
+            <div className='container__img'>
+              <img src={img1} alt='Producto relacionado' />
+              <img src={img2} alt='Producto relacionado' />
+              <img src={img3} alt='Producto relacionado' />
+              <img src={img4} alt='Producto relacionado' />
             </div>
-            <div className="container__pricehistory">
+            <div className='container__pricehistory'>
               <span>Aqui iría el historial de precios</span>
             </div>
           </div>
         </section>
-        <section className="content">
+        <section className='content'>
           <div>
-            <h1 className="container__title">
-              Laptop Apple Macbook Air 256gb - 13{" "}
+            <h1 className='container__title'>
+              Laptop Apple Macbook Air 256gb - 13{' '}
             </h1>
-            <h2 className="container__price">$1.485.oo</h2>
-            <p className="container__price-description">
+            <h2 className='container__price'>$1.485.oo</h2>
+            <p className='container__price-description'>
               Prices and shipping USD $1.485.oo delivery available availability
               in stock
             </p>
           </div>
           <div>
-            <p className="container__title-description">Description</p>
-            <p className="container__description">
+            <p className='container__title-description'>Description</p>
+            <p className='container__description'>
               The MacBook Air battery lasts up to 12 hours on a single charge,
               so you can work from morning until you get back from the office
               without charging. And if you want to relax, you have up to 12
@@ -56,14 +56,14 @@ const ProductDescription = () => {
               instantly and responds to any task in the blink of an eye.
             </p>
           </div>
-          <button className="container__btn" type="button">
+          <button className='container__btn' type='button'>
             SEE PRODUCT
           </button>
         </section>
       </div>
-      <section className="wrapper__comparator">
+      <section className='wrapper__comparator'>
         <h3>Price comparator</h3>
-        <div className="comparator">
+        <div className='comparator'>
           <PriceComparator />
           <PriceComparator />
           <PriceComparator />
