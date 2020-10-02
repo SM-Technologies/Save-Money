@@ -4,6 +4,7 @@ import Stars from '../../src/assets/images/stars.png';
 import Store from '../../src/assets//icons/Brands/amazon-icon.svg';
 
 export default function ProductDescription() {
+  // const {name, salePrice, description} = data;
   return (
     <>
       <div className='details__container'>

@@ -7,6 +7,7 @@ export default function Banner() {
     <>
       {/* Banner */}
       <section className='banner'>
+        <img className='banner__image' src={Ban} alt='Principal image' />
         <div className='container'>
           <h1>Online Shopping</h1>
           <h2>Online price and offers comparator</h2>
@@ -19,37 +20,91 @@ export default function Banner() {
               <a className='text__button'>SHOP NOW</a>
             </Link>
           </div>
-          <img className='banner__image' src={Ban} alt='Principal image' />
         </div>
       </section>
 
       <style jsx>{`
         a {
           text-decoration: none;
-          color: inherit;
         }
 
         p {
           margin: 0;
         }
-        /* Banner =========== */
         .banner {
-          height: 300px;
-          display: flex;
-          align-items: center;
-          flex-wrap: wrap;
+          width: 100%;
+          height: inherit;
+          position: relative;
+          margin: auto 0;
+        }
+        img {
+          height: inherit;
+          width: inherit;
+          position: absolute;
+        }
+        .container {
+          padding: 1.5%;
+          position: absolute;
+          width: 32.5%;
+          box-sizing: border-box;
+          overflow: hidden;
+        }
+        .container > h1 {
+          font-size: 1.75rem;
+          line-height: 1.5;
+          letter-spacing: -0.2px;
+          color: white;
+          margin-top: 0.5rem ¿;
+        }
+        .container > h2 {
+          font-size: 1.25rem;
+          color: #3e93c1;
+        }
+        .container > p {
+          /* max-width: 37.5%; */
+          font-size: 1em;
+          color: white;
+        }
+        .button__banner {
+          background: linear-gradient(
+            to bottom,
+            rgba(80, 181, 13, 1) 0%,
+            rgba(0, 69, 43, 1) 100%
+          );
+          color: white;
+          padding: 5px;
+          border-radius: 20px;
+          width: 90px;
+          text-align: center;
+          margin: 5% 0 0 0;
+        }
+        .button__banner:hover {
+          color: #f7b733;
+          font-size: 13px;
+          background-color: white;
+          border: 1px solid white;
         }
 
-        .container {
+        .text__button {
+          color: white;
+          margin-bottom: 5px;
+        }
+        /* Banner =========== */
+        /* .banner {
           max-width: 1100px;
-          /* width: 100%; */
-          flex: 1;
+          isplay: flex; 
+          align-items: center;
+          flex-wrap: wrap; 
+        }*/
+
+        /* .container {
           margin: 0 auto;
           display: inherit;
           justify-content: inherit;
           height: inherit;
           flex-wrap: inherit;
-          overflow: auto;
+          overflow: hidden;
+          box-sizing: border-box;
         }
         .container::-webkit-scrollbar {
           background: transparent;
@@ -57,9 +112,6 @@ export default function Banner() {
 
         h1 {
           font-size: 30px;
-          line-height: 1.5;
-          letter-spacing: -0.2px;
-          color: white;
           margin: 0;
           z-index: 5;
           margin-top: 20px;
@@ -71,7 +123,6 @@ export default function Banner() {
           font-size: 20px;
           margin: 0%;
           z-index: 3;
-          color: #3e93c1;
           margin-top: 70px;
           margin-left: 20px;
           max-width: 320px;
@@ -107,25 +158,17 @@ export default function Banner() {
           );
         }
 
-        .button__banner:hover {
-          color: #f7b733;
-          font-size: 13px;
-          background-color: white;
-          border: 1px solid white;
-        }
+        
 
-        a .text__button {
-          margin-bottom: 5px;
-        }
 
         .banner__image {
           position: relative;
           max-width: 1100px;
-        }
+        } */
         /* end Banner =========== */
 
         /* Responsive =========== */
-        @media screen and (max-width: 1024px) {
+        /* @media screen and (max-width: 1024px) {
           .banner {
             height: auto;
             position: relative;
@@ -204,9 +247,9 @@ export default function Banner() {
             height: 10px;
             font-size: 9px;
           }
-        }
+        } */
 
-        @media screen and (max-width: 480px) {
+        /* @media screen and (max-width: 480px) {
           .banner {
             padding: 20px;
           }
@@ -232,10 +275,10 @@ export default function Banner() {
             height: 10px;
             font-size: 9px;
           }
-        }
+        } */
 
-        @media screen and (max-width: 320px) {
-          h1 {
+        /* @media screen and (max-width: 320px) { */
+        /* h1 {
             font-size: 12px;
             max-width: 50px;
             line-height: 1;
@@ -247,8 +290,8 @@ export default function Banner() {
           }
           .banner .container p {
             margin-left: -220px;
-          }
-        }
+          } */
+        /* } */
       `}</style>
     </>
   );

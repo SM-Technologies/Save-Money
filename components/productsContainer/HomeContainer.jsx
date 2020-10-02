@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 
 import Cards from '../card/CardProduct';
-// import mac from '../../src/assets/images/banner-02 1.png';
-import Banner from '../banner/Banner';
 
-export default function HomeContainer() {
+import Banner from '../banner/banner';
+import mac from '../../src/assets/images/Mac.png';
+import {
+  getOffProducts,
+  getProducts,
+  getProductByName,
+} from '../../redux/actions/productsActions';
+
+const HomeContainer = (props) => {
+  const { offerProducts, dataProducts } = props;
+
+  const getProds = async () => {
+    await props.getOffProducts();
+    await props.getProducts();
+  };
+
+  // useEffect(() => {
+  //     getProds();
+  // }, [offerProducts.lenght]);
+  // if (!dataProducts || !offerProducts) {
+  //   return '';
+  // }
   return (
     <>
       <div className='home__container'>
@@ -19,11 +39,14 @@ export default function HomeContainer() {
           <Cards />
           <Cards />
           <Cards />
+          {/* {offerProducts.map((prod, index) => (
+            <>{index >= 4 ? null : <Cards data={prod} />}</>
+          ))} */}
         </div>
         <div className='title2__container'>
           <h2>All Products</h2>
         </div>
-        <div className='products__container'>
+        <section id='products' className='products__container'>
           <Cards />
           <Cards />
           <Cards />
@@ -32,7 +55,11 @@ export default function HomeContainer() {
           <Cards />
           <Cards />
           <Cards />
-        </div>
+        </section>
+
+        {/* {dataProducts.map((prod, index) => (
+            <>{index >= 4 ? null : <Cards data={prod} />}</>
+          ))} */}
       </div>
 
       <style jsx>{`
@@ -52,11 +79,8 @@ export default function HomeContainer() {
         .banner__container {
           grid-area: banner;
           width: 100%;
-        }
-        .banner__container > img {
-          width: 100%;
-          height:100%;
-          box-sizing: border-box;
+          overflow: auto
+          
         }
         .title__container {
           grid-area: title;
@@ -75,7 +99,7 @@ export default function HomeContainer() {
           grid-area: offers;
           display: grid;
           grid-template: 1fr / repeat(auto-fit, minmax(250px, 1fr));
-          grid-gap: 15px 5px;
+          grid-gap: 5px;
           width: 100%;
         }
         .products__container {
@@ -83,7 +107,7 @@ export default function HomeContainer() {
           display: grid;
           grid-template: 1fr / repeat(auto-fit, minmax(250px, 1fr));
           /* grid-template: 1fr / repeat(4, 1fr); */
-          grid-gap: 15px 5px;
+          grid-gap: 10px;
           width: 100%;
         }
 
@@ -102,6 +126,7 @@ export default function HomeContainer() {
           grid-area: offers;
           display: grid;
           grid-template: 1fr / repeat(auto-fit, minmax(250px, 1fr));
+          grid-gap: 5px;
         }
         .products__container {
 
@@ -109,4 +134,14 @@ export default function HomeContainer() {
       `}</style>
     </>
   );
-}
+};
+
+const mapStateToProps = ({ productsReducer }) => productsReducer;
+
+const mapDispatchToProps = {
+  getOffProducts,
+  getProducts,
+  getProductByName,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);

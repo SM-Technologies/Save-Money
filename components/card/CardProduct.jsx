@@ -6,6 +6,7 @@ import ProductCompare from './ProductCompare';
 import ProductButton from './ProductButton';
 
 export default function Card() {
+  // const {urlImage, name, salePrice, description} = data;
   return (
     <>
       <div className='card__container'>
