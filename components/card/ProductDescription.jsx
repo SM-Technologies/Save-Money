@@ -3,13 +3,13 @@ import React from 'react';
 import Stars from '../../src/assets/images/stars.png';
 import Store from '../../src/assets//icons/Brands/amazon-icon.svg';
 
-export default function ProductDescription() {
-  // const {name, salePrice, description} = data;
+export default function ProductDescription({ desc }) {
+  const {name, Price, stars} = desc;
   return (
     <>
       <div className='details__container'>
-        <h2>Laptop Apple Macbook Air 256gb - 13 </h2>
-        <h1>$1.485.00</h1>
+        <h2>{name}</h2>
+        <h1>{Price}</h1>
         <div className='ship__detail'>
           <img src={Store} alt='' />
           <div className='avalible'>
@@ -19,7 +19,7 @@ export default function ProductDescription() {
         </div>
         <p>Offer updated on: 20/9/2020</p>
         <div className='assesment'>
-          <p>Assessment:</p>
+          <p>Assessment: `${stars}`</p>
           <img src={Stars} alt='' />
         </div>
       </div>
