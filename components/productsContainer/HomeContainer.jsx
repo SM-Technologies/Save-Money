@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import Cards from '../card/CardProduct';
-import mac from '../../src/assets/images/Mac.png';
+import Banner  from '../banner/banner';
 import loaderGif from '../../src/assets/images/loader.gif'
 import { getProducts } from '../../redux/actions/productsActions';
 
@@ -35,12 +35,12 @@ const HomeContainer = (props) => {
     <>
       <div className='home__container'>
         <div className='banner__container'>
-          <img src={mac} alt='' />
+          <Banner />
         </div>
         <div className='title__container'>
           <h2>Offers of the week</h2>
         </div>
-        <div className='offers__container'>
+        <div className='offers__container' id='allProducts'>
           {AllProducts.map((prod) => (
             <Cards data={prod} key={prod._id}/>
           ))}

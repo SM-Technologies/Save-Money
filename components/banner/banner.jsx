@@ -16,7 +16,7 @@ export default function Banner() {
             select and compare thousands of offers from the best brands.
           </p>
           <div className='button__banner'>
-            <Link href='#'>
+            <Link href='#allProducts'>
               <a className='text__button'>SHOP NOW</a>
             </Link>
           </div>
@@ -54,7 +54,7 @@ export default function Banner() {
           line-height: 1.5;
           letter-spacing: -0.2px;
           color: white;
-          margin-top: 0.5em ¿;
+          margin-top: 0.5em;
         }
         .container > h2 {
           font-size: 1.25em;
@@ -109,7 +109,7 @@ export default function Banner() {
             line-height: 1.5;
             letter-spacing: -0.2px;
             color: white;
-            margin-top: 0.5em ¿;
+            margin-top: 0.5em ;
           }
           .container > h2 {
             font-size: 0.5em;
