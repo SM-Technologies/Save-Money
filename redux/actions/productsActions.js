@@ -53,7 +53,7 @@ export const getProductById = (id) => async (dispatch) => {
 };
 
 export const getProductByName = (name) => async (dispatch) => {
-   const query = gql `
+    const query = gql `
     query generalSearch ($keyword: String!){
       searchItems(keyword: $keyword) {
         __typename
@@ -68,15 +68,14 @@ export const getProductByName = (name) => async (dispatch) => {
       }
     }
   `
-
+  console.log(JSON.stringify(name));
   const nameProduct = { keyword: name }
-
    try {
     const response = await request(endpoint, query, nameProduct);
-    const data = response.getProducts;
+    console.log(response.searchItems);
     dispatch({
       type: 'PRODUCT_BY_NAME',
-      payload: data,
+      payload: response.searchItems,
     });
   } catch (error) {
     console.error('get products by Id-> err', error);

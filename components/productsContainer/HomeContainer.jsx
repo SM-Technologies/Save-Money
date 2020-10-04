@@ -8,10 +8,10 @@ import { getProducts } from '../../redux/actions/productsActions';
 
 const HomeContainer = (props) => {
   
-  const { dataProducts } = props;
+  const { dataProducts, productByName } = props;
   
-  const  offers = dataProducts.slice(1782, 1786);
-  let  AllProducts = dataProducts.slice(1786, 1806);
+  let  offers = dataProducts.slice(1782, 1790);
+  let  allProducts = dataProducts.slice(1786, 1896);
 
   const getProds = async () => {
     await props.getProducts();
@@ -20,28 +20,31 @@ const HomeContainer = (props) => {
   useEffect(() => {
       getProds();
   }, [dataProducts.lenght]);
+
+  if(productByName){
+    allProducts = productByName.slice(0, 10);
+    console.log(allProducts)
+  }
+
   if (!dataProducts ) {
-    AllProducts=[{
-      "_id": "",
+    offers=[{
       "imageURL": `${loaderGif}`,
-      "name": "",
-      "Price": "",
-      "link": "",
-      "stars": "" 
+    }];
+    allProducts=[{
+      "imageURL": `${loaderGif}`,
     }];
   }
-  console.log(offers);
   return (
     <>
       <div className='home__container'>
-        <div className='banner__container'>
+        <div className='banner__container fadeShow'>
           <Banner />
         </div>
         <div className='title__container'>
           <h2>Offers of the week</h2>
         </div>
         <div className='offers__container' id='allProducts'>
-          {AllProducts.map((prod) => (
+          {offers.map((prod) => (
             <Cards data={prod} key={prod._id}/>
           ))}
         </div>
@@ -49,7 +52,7 @@ const HomeContainer = (props) => {
           <h2>All Products</h2>
         </div>
         <div className='products__container'>
-          {AllProducts.map((prod) => (
+          {allProducts.map((prod) => (
             <Cards data={prod} key={prod._id} />
           ))}
         </div>
@@ -97,6 +100,7 @@ const HomeContainer = (props) => {
           grid-template: 1fr / repeat(auto-fit, minmax(250px, 1fr));
           grid-gap: 5px;
           width: 100%;
+          height:min-content;
         }
         .products__container {
           grid-area: products;
@@ -127,6 +131,33 @@ const HomeContainer = (props) => {
         }
         .products__container {
 
+        }
+
+        .fadeShow{
+          -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+          animation-fill-mode: both;
+          -webkit-animation-fill-mode: both;
+          -webkit-animation-name: fadeShow;
+          animation-name: fadeShow;
+        }
+      
+        @keyframes fadeShow {
+          0%{
+            opacity: 0;
+          }
+          25%{
+            opacity: 0.25;
+          }
+          50%{
+            opacity: 0.50;
+          }
+          75%{
+            opacity: 0.75;
+          }
+          100%{
+            opacity: 1;
+          }
         }
       `}</style>
     </>

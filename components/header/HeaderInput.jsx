@@ -1,9 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Link from 'next/link';
+import { connect } from 'react-redux';
+import { getProductByName } from '../../redux/actions/productsActions';
 
 import Search from '../../src/assets/icons/buscar.svg';
 
-export default function InputHeader() {
+const InputHeader = (props)  =>{
+  const [value, setValues] = useState("");
+  const handleInput = (event) => {
+    setValues({
+      ...value,
+      [event.target.name]: event.target.value,
+    });
+  };
+  const handleClick = (event) => {
+    event.preventDefault();
+    // console.log(value.search)
+    props.getProductByName(value.search);
+  };
+
   return (
     <>
       <div className='input__container'>
@@ -11,11 +26,15 @@ export default function InputHeader() {
           className='input__input'
           type='text'
           placeholder='What do you want to buy?'
+          id='search'
+          name='search'
+          aria-label='searchProduct'
+          onChange={(e) => handleInput(e)}
         />
         <span className='input__icon'>
-          <Link href=''>
-            <img src={Search} alt='Icon search' />
-          </Link>
+          {/* <button onClick={handleClick}> */}
+            <img src={Search} alt='Icon search' onClick={handleClick}></img>
+          {/* </button> */}
         </span>
       </div>
 
@@ -31,6 +50,9 @@ export default function InputHeader() {
           padding: 0;
           border-radius: 25px;
           background-color: var(--input-bg);
+        }
+        .input__container:hover {
+          border: 1px solid gray;
         }
         .input__input {
           /* display: flex; */
@@ -90,3 +112,11 @@ export default function InputHeader() {
     </>
   );
 }
+
+const mapStateToProps = ({ productsReducer }) => productsReducer;
+
+const mapDispatchToProps = {
+  getProductByName,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(InputHeader);

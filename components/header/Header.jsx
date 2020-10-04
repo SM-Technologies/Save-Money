@@ -1,16 +1,21 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 
 import LogoHeader from './HeaderLogo';
 import InputHeader from './HeaderInput';
 import NavHeader from './HeaderNav';
 
+import store from '../../redux/store';
+
 export default function Header() {
   return (
     <>
-      <div className='container'>
+      <div className='container fadeInDown'>
         <header>
           <LogoHeader />
-          <InputHeader />
+          <Provider store={store}>
+            <InputHeader />
+          </Provider>
           <NavHeader />
         </header>
       </div>
@@ -20,6 +25,8 @@ export default function Header() {
           height: 100px;
           max-width: 1100px;
           margin: 0 auto;
+          margin-bottom:20px;
+          box-shadow: 0px 3px 3px #EFF1F0;
         }
         header {
           display: grid;
@@ -36,6 +43,28 @@ export default function Header() {
             border-bottom: 1px solid var(--input-bg);
           }
         }
+
+        .fadeInDown{
+          -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+          animation-fill-mode: both;
+          -webkit-animation-fill-mode: both;
+          -webkit-animation-name: fadeInDown;
+          animation-name: fadeInDown;
+        }
+      
+        @keyframes fadeInDown {
+        from{
+          opacity: 0;
+          -webkit-transform: translate3d(0,-100%,0);
+          transform: translate3d(0,-100%,0);
+        }
+        to{
+          opacity: 1;
+          -webkit-transform: translate3d(0,0,0);
+          transform: translate3d(0,0,0);
+        }
+      }
       `}</style>
 
       <style global jsx>{`

@@ -27,12 +27,12 @@ export default function NavHeader() {
 
         <div className='nav__store'>
           <span>
-            <Link href=''>
+            <Link href='#stores'>
               <a>
                 <img className='icon' src={Store} alt='' />
               </a>
             </Link>
-            <Link href=''>
+            <Link href='#stores'>
               <a>
                 <p>STORE</p>
               </a>

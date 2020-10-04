@@ -66,7 +66,7 @@ const Footer = () => {
       </section>
 
       {/* Stores */}
-      <section className='stores'>
+      <section className='stores' id="stores">
         <div className='text_prices'>Compare Prices of:</div>
         <div className='logos__stores'>
           <a href='https://www.aliexpress.com/' target='_blank'>
