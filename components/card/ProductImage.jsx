@@ -2,11 +2,12 @@ import React from 'react';
 
 import Product from '../../src/assets/images/Mac.png';
 // const {urlImage} = data;
-export default function Card() {
+export default function Card({ image }) {
+  const { imageURL } = image;
   return (
     <>
       <div className='product__container'>
-        <img className='image' src={Product} alt='' />
+        <img className='image' src={imageURL} alt='' />
       </div>
       <style jsx>{`
         .product__container {

@@ -3,10 +3,11 @@ import Link from 'next/link';
 
 import Arrow from '../../src/assets/icons/arrow-right.svg';
 
-export default function ProductButtons() {
+export default function ProductButtons({ id }) {
+  const { _id } = id;
   return (
     <>
-      <Link href=''>
+      <Link href={`product/${_id}`}>
         <a className='button'> See Product </a>
       </Link>
 

@@ -5,15 +5,15 @@ import ProductDescription from './ProductDescription';
 import ProductCompare from './ProductCompare';
 import ProductButton from './ProductButton';
 
-export default function Card() {
-  // const {urlImage, name, salePrice, description} = data;
+export default function Card({ data }) {
+  const { _id } = data;
   return (
     <>
-      <div className='card__container'>
-        <ProductImage />
-        <ProductDescription />
+      <div className='card__container' data-id={_id}>
+        <ProductImage image={data}/>
+        <ProductDescription desc={data}/>
         <ProductCompare />
-        <ProductButton />
+        <ProductButton id={data}/>
       </div>
 
       <style jsx>{`
@@ -22,7 +22,7 @@ export default function Card() {
           place-self:center;
           border: 1px solid var(--border-color);
           width: 200px;
-          height: 300px;
+          height: min-content;
           padding: 0 10px;
           border-radius: 10px;
           box-shadow:2px 2px .1em var(--border-color)

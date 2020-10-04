@@ -3,23 +3,34 @@ import { connect } from 'react-redux';
 
 import Cards from '../card/CardProduct';
 import mac from '../../src/assets/images/Mac.png';
-import { getOffProducts, getProducts, getProductByName } from '../../redux/actions/productsActions';
+import loaderGif from '../../src/assets/images/loader.gif'
+import { getProducts } from '../../redux/actions/productsActions';
 
 const HomeContainer = (props) => {
   
-  const {  offerProducts, dataProducts } = props;
+  const { dataProducts } = props;
+  
+  const  offers = dataProducts.slice(1782, 1786);
+  let  AllProducts = dataProducts.slice(1786, 1806);
 
   const getProds = async () => {
-    await props.getOffProducts();
     await props.getProducts();
   };
 
-  // useEffect(() => {
-  //     getProds();
-  // }, [offerProducts.lenght]);
-  // if (!dataProducts || !offerProducts) {
-  //   return '';
-  // }
+  useEffect(() => {
+      getProds();
+  }, [dataProducts.lenght]);
+  if (!dataProducts ) {
+    AllProducts=[{
+      "_id": "",
+      "imageURL": `${loaderGif}`,
+      "name": "",
+      "Price": "",
+      "link": "",
+      "stars": "" 
+    }];
+  }
+  console.log(offers);
   return (
     <>
       <div className='home__container'>
@@ -30,29 +41,17 @@ const HomeContainer = (props) => {
           <h2>Offers of the week</h2>
         </div>
         <div className='offers__container'>
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
-            {/* {offerProducts.map((prod, index) => (
-            <>{index >= 4 ? null : <Cards data={prod} />}</>
-          ))} */}
+          {AllProducts.map((prod) => (
+            <Cards data={prod} key={prod._id}/>
+          ))}
         </div>
         <div className='title2__container'>
           <h2>All Products</h2>
         </div>
         <div className='products__container'>
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
-          {/* {dataProducts.map((prod, index) => (
-            <>{index >= 4 ? null : <Cards data={prod} />}</>
-          ))} */}
+          {AllProducts.map((prod) => (
+            <Cards data={prod} key={prod._id} />
+          ))}
         </div>
       </div>
 
@@ -106,6 +105,7 @@ const HomeContainer = (props) => {
           /* grid-template: 1fr / repeat(4, 1fr); */
           grid-gap: 10px;
           width: 100%;
+          height:100%;
         }
 
         @media (max-width: 320px) {
@@ -136,9 +136,7 @@ const HomeContainer = (props) => {
 const mapStateToProps = ({ productsReducer }) => productsReducer;
 
 const mapDispatchToProps = {
-  getOffProducts,
   getProducts,
-  getProductByName
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);
