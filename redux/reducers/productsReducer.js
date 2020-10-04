@@ -1,7 +1,6 @@
 const INITIAL_STATE = {
   error: null,
-  status: 'idle',
-  offerProducts: '',
+  status: false,
   dataProducts: '',
   productById: '',
   productByName: '',
@@ -9,18 +8,11 @@ const INITIAL_STATE = {
 
 const productsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'DATA_OFF_PRODUCTS':
-      return {
-        ...state,
-        offerProducts: action.payload,
-        loading: false,
-        error: null,
-      };
     case 'DATA_PRODUCTS':
       return {
         ...state,
         dataProducts: action.payload,
-        loading: false,
+        status: true,
         error: null,
       };
     case 'PRODUCT_BY_ID':
