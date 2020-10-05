@@ -25,8 +25,8 @@ export default function Header() {
           height: 100px;
           max-width: 1100px;
           margin: 0 auto;
-          margin-bottom:20px;
-          box-shadow: 0px 3px 3px #EFF1F0;
+          margin-bottom: 20px;
+          box-shadow: 0px 3px 3px #eff1f0;
         }
         header {
           display: grid;
@@ -34,17 +34,20 @@ export default function Header() {
           height: 100px;
         }
         @media (max-width: 768px) {
+          .container {
+            height: 110px;
+          }
           header {
             grid-template: 1fr 1fr / 0.25fr 1fr 0.25fr;
             grid-template-areas:
               'categorie logo .'
-              'input input input';
+              '. input .';
             height: 100px;
-            border-bottom: 1px solid var(--input-bg);
+            /* border-bottom: 1px solid var(--input-bg); */
           }
         }
 
-        .fadeInDown{
+        .fadeInDown {
           -webkit-animation-duration: 1.5s;
           animation-duration: 1.5s;
           animation-fill-mode: both;
@@ -52,19 +55,19 @@ export default function Header() {
           -webkit-animation-name: fadeInDown;
           animation-name: fadeInDown;
         }
-      
+
         @keyframes fadeInDown {
-        from{
-          opacity: 0;
-          -webkit-transform: translate3d(0,-100%,0);
-          transform: translate3d(0,-100%,0);
+          from {
+            opacity: 0;
+            -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+          }
+          to {
+            opacity: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+          }
         }
-        to{
-          opacity: 1;
-          -webkit-transform: translate3d(0,0,0);
-          transform: translate3d(0,0,0);
-        }
-      }
       `}</style>
 
       <style global jsx>{`

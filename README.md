@@ -1,8 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![SamoTech logo](https://i.imgur.com/bqI30Qc.png 'SamoTech logo')
 
-## Getting Started
+![](https://img.shields.io/github/stars/SM-Technologies/Save-Money) ![](https://img.shields.io/github/forks/SM-Technologies/Save-Money)
+![GitHub](https://img.shields.io/github/license/SM-Technologies/Save-Money?color=%232a9d8f)
+![](https://img.shields.io/github/release/SM-Technologies/Save-Money) ![](https://img.shields.io/github/issues/SM-Technologies/Save-Money)
 
-First, run the development server:
+# Lets Cook - Food Market 💻🥼👜🧰
+
+Samotech is a web application that allows users to search for a certain product (a cell phone, computer, appliances, etc.) and shows a list of the purchase options for that same product published in various ecommerce sites; such as Amazon, Mercado Libre, eBay, AliExpress, etc. At the top of the list, the product at the cheapest price of all sources is highlighted. In short, Samotech allows a user to buy a product at the cheapest price without the need for him to research and compare prices on different websites.
+
+**SITE:** https://save-money-mzostaphd.vercel.app
+
+_Link image demo_
+
+## 🎯 Objectives
+
+- Publicize promotions on the virtual channel.
+- Search products.
+- Select and filter options of list.
+
+---
+
+## 👨‍👩‍👧‍👦 Target Audiences
+
+Our application To obtain products from ecommerce, a public API provided by them must be used as a first priority. Otherwise, the ecommerce from which products are extracted must clearly specify in the terms and conditions and / or legal notice that web scraping is allowed.
+
+---
+
+## 🚀 Getting started
+
+If you want to run the site locally, you can:
+
+1. Clone the project.
+2. Go to project's folder
+
+```bash
+cd save-money
+```
+
+3. Install the dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+4. Run development enviroment.
 
 ```bash
 npm run dev
@@ -10,21 +53,42 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+_Api - descripcion_
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠 Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Por definir
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🧾 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The MIT License (MIT)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## ➕ Contributing
+
+If you want to contribute with this project, just make a Pull Request explaining the improving ✨.
+
+## 💻 Technologies:
+
+- NextJs
+- JavaScript
+- HTML5
+- CSS
+- Styled-Components
+- SPA
+- Jest
+
+---
+
+## 🚧 Test
+
+## _Pruebas description_
+
+## 🤝 Gratefulness
+
+pendiente
