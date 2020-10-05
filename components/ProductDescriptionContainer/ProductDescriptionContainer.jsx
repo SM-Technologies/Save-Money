@@ -5,19 +5,19 @@ const {
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Link from 'next/link';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import { getProductByName } from '../../redux/actions/productsActions';
 
 const ProductDescriptionContainer = (props) => {
   const path = window.location.pathname;
-  const id= path.substring(9);
+  const id = path.substring(9);
 
   // const router = useRouter()
   // const { pid } = router.query
   // console.log(pid)
 
   const { dataProducts, productByName } = props;
-  const itemProduct = dataProducts.find(element => element._id === id)
+  const itemProduct = dataProducts.find((element) => element._id === id);
   console.log(itemProduct);
   const getProds = async () => {
     await props.getProductByName(itemProduct.name);
@@ -27,17 +27,19 @@ const ProductDescriptionContainer = (props) => {
     getProds();
   }, []);
 
-  let  listComparator = productByName.slice(0, 10);
+  let listComparator = productByName.slice(0, 10);
   console.log(listComparator);
-  if (!listComparator ) {
-    listComparator=[{
-      '_id': '',
-      'imageURL': '',
-      'name': '',
-      'Price': '',
-      'link': '',
-      'stars': ''
-    }];
+  if (!listComparator) {
+    listComparator = [
+      {
+        _id: '',
+        imageURL: '',
+        name: '',
+        Price: '',
+        link: '',
+        stars: '',
+      },
+    ];
   }
   console.log(listComparator);
 
@@ -46,10 +48,7 @@ const ProductDescriptionContainer = (props) => {
       <div className='container'>
         <section>
           <div>
-            <img
-              src={itemProduct.imageURL}
-              alt='Descripcion del producto'
-            />
+            <img src={itemProduct.imageURL} alt='Descripcion del producto' />
             {/* <div className='container__img'>
               <img
                 src={itemProduct.imageURL}
@@ -75,23 +74,21 @@ const ProductDescriptionContainer = (props) => {
         </section>
         <section>
           <div>
-            <h1 className='container__title'>
-              {itemProduct.name}
-            </h1>
+            <h1 className='container__title'>{itemProduct.name}</h1>
             <h2 className='container__price'>${itemProduct.Price}</h2>
             <p className='container__price-description'>
-              Prices and shipping USD ${itemProduct.Price} delivery available availability
-              in stock
+              Prices and shipping USD ${itemProduct.Price} delivery available
+              availability in stock
             </p>
           </div>
           <div>
             <p className='container__title-description'>Description</p>
-            <p className='container__description'>
-              {itemProduct.name}
-            </p>
+            <p className='container__description'>{itemProduct.name}</p>
           </div>
           <button className='container__btn' type='button'>
-            <a class="" href={itemProduct.link} target="blanck">SEE PRODUCT</a>
+            <a class='' href={itemProduct.link} target='blanck'>
+              SEE PRODUCT
+            </a>
             {/* SEE PRODUCT */}
           </button>
         </section>
@@ -101,7 +98,7 @@ const ProductDescriptionContainer = (props) => {
         <div className='comparator'>
           {/* <PriceComparator /> */}
           {listComparator.map((prod) => (
-            <PriceComparator data={prod} key={prod._id}/>
+            <PriceComparator data={prod} key={prod._id} />
           ))}
         </div>
       </section>
@@ -110,6 +107,8 @@ const ProductDescriptionContainer = (props) => {
           padding: 0px 50px;
           display: grid;
           grid-template-columns: 40% 60%;
+          max-width: 1100px;
+          margin: 0 auto;
         }
         .container__img {
         }
@@ -163,15 +162,17 @@ const ProductDescriptionContainer = (props) => {
             rgba(0, 69, 43, 1) 100%
           );
         }
-        .container__btn a{
+        .container__btn a {
           color: white;
-          text-decoration:none;
+          text-decoration: none;
         }
         .container__btn:hover {
           background-color: #00452a;
         }
         .wrapper__comparator {
-          padding: 0px 50px;
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 0px 50px 2.5%;
         }
         .comparator {
           border: 1px solid #ccc;
@@ -189,7 +190,10 @@ const ProductDescriptionContainer = (props) => {
 const mapStateToProps = ({ productsReducer }) => productsReducer;
 
 const mapDispatchToProps = {
-  getProductByName
+  getProductByName,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductDescriptionContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ProductDescriptionContainer);
