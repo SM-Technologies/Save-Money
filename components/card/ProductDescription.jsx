@@ -4,7 +4,7 @@ import Stars from '../../src/assets/images/stars.png';
 import Store from '../../src/assets//icons/Brands/amazon-icon.svg';
 
 export default function ProductDescription({ desc }) {
-  const {name, Price, stars} = desc;
+  const { name, Price, stars } = desc;
   return (
     <>
       <div className='details__container'>
@@ -35,6 +35,7 @@ export default function ProductDescription({ desc }) {
         .details__container {
           color: var(--text-color);
           padding: 0 2.5%;
+          max-width: 1100px;
         }
         .details__container > h2 {
           font-size: 0.8em;

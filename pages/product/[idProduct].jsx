@@ -77,6 +77,8 @@ const ProductDescription = () => {
             padding: 0px 50px;
             display: grid;
             grid-template-columns: 40% 60%;
+            max-width: 1100px;
+            margin: 0 auto;
           }
           .container__img{
           }
@@ -130,7 +132,10 @@ const ProductDescription = () => {
           }
           .wrapper__comparator{
             padding: 0px 50px;
-          margin-bottom: 30px;
+            margin-bottom: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            margin-bottom: 2.5%;
           }
           .comparator{
             border: 1px solid #ccc;

@@ -2,37 +2,40 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import Cards from '../card/CardProduct';
-import Banner  from '../banner/banner';
-import loaderGif from '../../src/assets/images/loader.gif'
+import Banner from '../banner/banner';
+import loaderGif from '../../src/assets/images/loader.gif';
 import { getProducts } from '../../redux/actions/productsActions';
 
 const HomeContainer = (props) => {
-  
   const { dataProducts, productByName } = props;
-  
-  let  offers = dataProducts.slice(1782, 1790);
-  let  allProducts = dataProducts.slice(1786, 1896);
+
+  let offers = dataProducts.slice(1782, 1790);
+  let allProducts = dataProducts.slice(1786, 1896);
 
   const getProds = async () => {
     await props.getProducts();
   };
 
   useEffect(() => {
-      getProds();
+    getProds();
   }, [dataProducts.lenght]);
 
-  if(productByName){
+  if (productByName) {
     allProducts = productByName.slice(0, 10);
-    console.log(allProducts)
+    console.log(allProducts);
   }
 
-  if (!dataProducts ) {
-    offers=[{
-      "imageURL": `${loaderGif}`,
-    }];
-    allProducts=[{
-      "imageURL": `${loaderGif}`,
-    }];
+  if (!dataProducts) {
+    offers = [
+      {
+        imageURL: `${loaderGif}`,
+      },
+    ];
+    allProducts = [
+      {
+        imageURL: `${loaderGif}`,
+      },
+    ];
   }
   return (
     <>
@@ -45,7 +48,7 @@ const HomeContainer = (props) => {
         </div>
         <div className='offers__container' id='allProducts'>
           {offers.map((prod) => (
-            <Cards data={prod} key={prod._id}/>
+            <Cards data={prod} key={prod._id} />
           ))}
         </div>
         <div className='title2__container'>
@@ -61,7 +64,7 @@ const HomeContainer = (props) => {
       <style jsx>{`
         .home__container {
           display: grid;
-          grid-template: 300px 75px 0.5fr 75px 1fr 50px / 1fr minmax(200px, 1100px) 1fr;
+          grid-template: 300px 75px minmax(200px, 850px)  75px 1fr 50px / 1fr minmax(200px, 1100px) 1fr;
           grid-template-areas:
             '. banner .'
             '. title .'
@@ -108,8 +111,8 @@ const HomeContainer = (props) => {
           grid-template: 1fr / repeat(auto-fit, minmax(250px, 1fr));
           /* grid-template: 1fr / repeat(4, 1fr); */
           grid-gap: 10px;
+          height: auto;
           width: 100%;
-          height:100%;
         }
 
         @media (max-width: 320px) {
@@ -130,6 +133,7 @@ const HomeContainer = (props) => {
           grid-gap: 5px;
         }
         .products__container {
+          height: min-content;
 
         }
 
@@ -162,7 +166,7 @@ const HomeContainer = (props) => {
       `}</style>
     </>
   );
-}
+};
 
 const mapStateToProps = ({ productsReducer }) => productsReducer;
 
