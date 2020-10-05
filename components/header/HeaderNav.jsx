@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import Category from '../../src/assets/icons/cuadrado.svg';
 import Store from '../../src/assets/icons/compras.svg';
-import Country from '../../src/assets/icons/Brands/mexico.svg';
+import Country from '../../src/assets/images/usa.png';
 import Arrow from '../../src/assets/icons/arrow-down.svg';
 
 export default function NavHeader() {
