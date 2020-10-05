@@ -23,7 +23,6 @@ const HomeContainer = (props) => {
 
   if(productByName){
     allProducts = productByName.slice(0, 10);
-    console.log(allProducts)
   }
 
   if (!dataProducts ) {

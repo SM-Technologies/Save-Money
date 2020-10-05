@@ -68,11 +68,9 @@ export const getProductByName = (name) => async (dispatch) => {
       }
     }
   `
-  console.log(JSON.stringify(name));
   const nameProduct = { keyword: name }
    try {
     const response = await request(endpoint, query, nameProduct);
-    console.log(response.searchItems);
     dispatch({
       type: 'PRODUCT_BY_NAME',
       payload: response.searchItems,

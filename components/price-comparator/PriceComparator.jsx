@@ -1,20 +1,22 @@
 import marca from '../../src/assets/icons/Brands/ebay-ar21.svg';
 
-export default function PriceComparator() {
+export default function PriceComparator({data}) {
+  const {  _id, imageURL, name, Price, link, stars } = data;
   return (
-    <div className='container'>
+    <div className='container' data-id={_id}>
       <p className='container__description'>
-        MacBook Pro Portable Silver 33.8 cm (13.3 ") 2560 x 1600 pixels 8th
-        generation Intel® Core i5 8 GB LPDDR3-
+        {name}
       </p>
-      <p className='container__price'>1,192.57</p>
+      <p className='container__price'>${Price}</p>
       <p className='container__delivery'>Delivery time: 7-8 working days</p>
       <div>
         <img className='container__img' src={marca} alt='logo-plataforma' />
-        <span className='container__opinions'>19 opiniones</span>
+        <span className='container__opinions'>{stars}</span>
       </div>
       <div className='container__btn'>
-        <button type='button'>VIEW DEAL</button>
+          <button className='container__btn' type='button'>
+            <a class="" href={link} target="blanck">SEE PRODUCT</a>
+          </button>
       </div>
       <style jsx>{`
         .container {
@@ -58,6 +60,17 @@ export default function PriceComparator() {
           padding: 10px 20px;
           border: none;
           cursor: pointer;
+          background: linear-gradient(
+            to bottom,
+            rgba(80, 181, 13, 1) 0%,
+            rgba(0, 69, 43, 1) 100%
+          );
+          outline:none;
+          margin
+        }
+        .container__btn a{
+          color: white;
+          text-decoration:none;
         }
         .container__btn button:hover {
           background-color: #00452a;
