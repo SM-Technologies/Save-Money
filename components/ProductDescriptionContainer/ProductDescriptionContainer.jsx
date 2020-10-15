@@ -2,7 +2,6 @@
 import PriceComparator from "../price-comparator/PriceComparator";
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { getProductByName } from '../../redux/actions/productsActions';
 
@@ -10,19 +9,8 @@ const ProductDescriptionContainer = (props) => {
   let router = useRouter();
   const path = router.query.idProduct;
   const id = path
-
-  // console.log(id);
-  // console.log(path);
-  // const id = path.substring(9);
-  // const path = window.location.pathname;
-  // const id = path.substring(9);
-  // const router = useRouter()
-  // const { pid } = router.query
-  // console.log(pid)
-
   const { dataProducts, productByName } = props;
   const itemProduct = dataProducts.find((element) => element._id === id);
-  console.log(itemProduct);
   const getProds = async () => {
     await props.getProductByName(itemProduct.name);
   };
@@ -32,7 +20,6 @@ const ProductDescriptionContainer = (props) => {
   }, []);
 
   let listComparator = productByName.slice(0, 10);
-  console.log(listComparator);
   if (!listComparator) {
     listComparator = [
       {
@@ -45,7 +32,6 @@ const ProductDescriptionContainer = (props) => {
       },
     ];
   }
-  console.log(listComparator);
 
   return (
     <>
@@ -53,27 +39,6 @@ const ProductDescriptionContainer = (props) => {
         <section>
           <div>
             <img src={itemProduct.imageURL} alt='Descripcion del producto' />
-            {/* <div className='container__img'>
-              <img
-                src={itemProduct.imageURL}
-                alt='Producto relacionado'
-              />
-              <img
-                src={itemProduct.imageURL}
-                alt='Producto relacionado'
-              />
-              <img
-                src={itemProduct.imageURL}
-                alt='Producto relacionado'
-              />
-              <img
-                src={itemProduct.imageURL}
-                alt='Producto relacionado'
-              />
-            </div> */}
-            {/* <div className='container__pricehistory'>
-              <span>historial de precios</span>
-            </div> */}
           </div>
         </section>
         <section>
@@ -90,7 +55,7 @@ const ProductDescriptionContainer = (props) => {
             <p className='container__description'>{itemProduct.name}</p>
           </div>
           <button className='container__btn' type='button'>
-            <a class='' href={itemProduct.link} target='blanck'>
+            <a className='' href={itemProduct.link} target='blanck'>
               SEE PRODUCT
             </a>
             {/* SEE PRODUCT */}
