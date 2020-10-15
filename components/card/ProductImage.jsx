@@ -11,13 +11,12 @@ export default function Card({ image }) {
       </div>
       <style jsx>{`
         .product__container {
+          display: flex;
           width: 100%;
-          height: auto;
-          margin: auto;
         }
         .image {
-          height: inherit;
-          width: inherit;
+          margin: auto;
+          width: calc(100% - 20px);
         }
 
         @media (max-width: 320px) {

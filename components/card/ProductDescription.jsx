@@ -1,25 +1,28 @@
 import React from 'react';
+import Link from 'next/link';
 
 import Stars from '../../src/assets/images/stars.png';
 import Store from '../../src/assets//icons/Brands/amazon-icon.svg';
 
 export default function ProductDescription({ desc }) {
-  const { name, Price, stars } = desc;
+  const { _id, name, Price, stars } = desc;
   return (
     <>
       <div className='details__container'>
-        <h2>{name}</h2>
-        <h1>{Price}</h1>
+        <Link href={`product/${_id}`}>
+          <h2>{name}</h2>
+        </Link>
+        <h1>$ {Price}</h1>
         <div className='ship__detail'>
           <img src={Store} alt='' />
           <div className='avalible'>
             <p>Ships to Colombia</p>
-            <h3>Availability in stock</h3>
+            <h5>Availability in stock</h5>
           </div>
         </div>
         <p>Offer updated on: 20/9/2020</p>
         <div className='assesment'>
-          <p>Assessment: `${stars}`</p>
+          <p>Assessment:</p>
           <img src={Stars} alt='' />
         </div>
       </div>
@@ -38,8 +41,16 @@ export default function ProductDescription({ desc }) {
           max-width: 1100px;
         }
         .details__container > h2 {
+          height: 32px;
           font-size: 0.8em;
           font-weight: 600;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          cursor: pointer;
+        }
+        .details__container > h2::-webkit-scrollbar {
+          background: transparent;
+          height: 1px;
         }
         .details__container > h1 {
           font-size: 1.5em;
@@ -47,9 +58,7 @@ export default function ProductDescription({ desc }) {
         .details__container > p {
           color: var(--last-update-color);
           font-size: 0.75em;
-          font-weight: 600;
-        }
-        .details__container > h2 {
+          /* font-weight: 600; */
         }
 
         .ship__detail {
@@ -65,13 +74,18 @@ export default function ProductDescription({ desc }) {
         .avalible > p {
           font-size: 0.75em;
         }
-        .avalible > h3 {
-          color: var(--last-update);
+        .avalible > h5 {
+          color: var(--last-update-color);
+          margin: 0;
           font-weight: 600;
-          font-size: 1em;
+          font-size: 0.8em;
+          /* height: 32px; */
         }
         .assesment {
           display: flex;
+          align-items: center;
+          height: 20px;
+          margin: auto;
         }
         .assesment > p {
           font-size: 0.75em;

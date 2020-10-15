@@ -23,7 +23,7 @@ export default function ProductButtons({ id }) {
         }
         .button {
           background: var(--button-bg);
-          border-radius: 15px;
+          border-radius: 0 0 10px 10px;
           color: white;
         }
         .button::visited {

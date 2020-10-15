@@ -23,7 +23,7 @@ export default function Header() {
       <style jsx>{`
         .container {
           height: 100px;
-          max-width: 1100px;
+          /* max-width: 1100px; */
           margin: 0 auto;
           margin-bottom: 20px;
           box-shadow: 0px 3px 3px #eff1f0;
