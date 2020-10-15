@@ -1,7 +1,5 @@
-const {
-  default: PriceComparator,
-} = require('../price-comparator/PriceComparator');
-
+// const { default: PriceComparator} = require('../price-comparator/PriceComparator');
+import PriceComparator from "../price-comparator/PriceComparator";
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Link from 'next/link';
@@ -9,9 +7,15 @@ import { useRouter } from 'next/router';
 import { getProductByName } from '../../redux/actions/productsActions';
 
 const ProductDescriptionContainer = (props) => {
-  const path = window.location.pathname;
-  const id = path.substring(9);
+  let router = useRouter();
+  const path = router.query.idProduct;
+  const id = path
 
+  // console.log(id);
+  // console.log(path);
+  // const id = path.substring(9);
+  // const path = window.location.pathname;
+  // const id = path.substring(9);
   // const router = useRouter()
   // const { pid } = router.query
   // console.log(pid)
