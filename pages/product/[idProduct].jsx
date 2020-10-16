@@ -1,9 +1,9 @@
 import { Provider } from 'react-redux';
-import ProductDescriptionContainer from '../../components/ProductDescriptionContainer/ProductDescriptionContainer'
+import ProductDescriptionContainer from '../../components/ProductDescriptionContainer/ProductDescriptionContainer';
 import Layout from '../../components/layout/Layout';
-import store from '../../redux/store'
+import store from '../../redux/store';
 
-const ProductDescription = () => {
+const ProductDescription = (props) => {
   return (
     <>
       <Layout>

@@ -9,7 +9,7 @@ export default function Card({ data }) {
   const { _id } = data;
   return (
     <>
-      <div className='card__container' data-id={_id}>
+      <div className='card__container' data-id={_id} key={_id}>
         <ProductImage image={data} />
         <ProductDescription desc={data} />
         <ProductCompare />
