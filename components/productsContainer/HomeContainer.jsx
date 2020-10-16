@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import Carousel from 'react-elastic-carousel';
 
 import Cards from '../card/CardProduct';
 import Banner from '../banner/banner';
@@ -9,8 +10,8 @@ import { getProducts } from '../../redux/actions/productsActions';
 const HomeContainer = (props) => {
   const { dataProducts, productByName } = props;
 
-  let offers = dataProducts.slice(1782, 1790);
-  let allProducts = dataProducts.slice(1786, 1896);
+  let offers = dataProducts.slice(1782, 1792);
+  let allProducts = dataProducts.slice(1792, 1812);
 
   const getProds = async () => {
     await props.getProducts();
@@ -36,6 +37,14 @@ const HomeContainer = (props) => {
       },
     ];
   }
+
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2 },
+    { width: 768, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 4 },
+  ];
+
   return (
     <>
       <div className='home__container'>
@@ -45,15 +54,17 @@ const HomeContainer = (props) => {
         <div className='title__container'>
           <h2>Offers of the week</h2>
         </div>
-        <div className='offers__container' id='allProducts'>
-          {offers.map((prod) => (
-            <Cards data={prod} key={prod._id} />
-          ))}
+        <div className='offers__container'>
+          <Carousel breakPoints={breakPoints}>
+            {offers.map((prod) => (
+              <Cards data={prod} key={prod._id} />
+            ))}
+          </Carousel>
         </div>
         <div className='title2__container'>
           <h2>All Products</h2>
         </div>
-        <div className='products__container'>
+        <div className='products__container' id='allProducts'>
           {allProducts.map((prod) => (
             <Cards data={prod} key={prod._id} />
           ))}
@@ -63,7 +74,7 @@ const HomeContainer = (props) => {
       <style jsx>{`
         .home__container {
           display: grid;
-          grid-template: 300px 75px minmax(200px, 850px)  75px 1fr 50px / 1fr minmax(200px, 1100px) 1fr;
+          grid-template: 300px 75px  min-content 75px 1fr 50px / 1fr minmax(200px, 1100px) 1fr;
           grid-template-areas:
             '. banner .'
             '. title .'
@@ -98,10 +109,6 @@ const HomeContainer = (props) => {
         }
         .offers__container {
           grid-area: offers;
-          display: grid;
-          grid-template: 1fr / repeat(auto-fit, minmax(250px, 1fr));
-          grid-gap: 5px;
-          width: 100%;
           height:min-content;
         }
         .products__container {

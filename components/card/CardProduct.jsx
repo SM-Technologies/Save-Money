@@ -10,10 +10,10 @@ export default function Card({ data }) {
   return (
     <>
       <div className='card__container' data-id={_id}>
-        <ProductImage image={data}/>
-        <ProductDescription desc={data}/>
+        <ProductImage image={data} />
+        <ProductDescription desc={data} />
         <ProductCompare />
-        <ProductButton id={data}/>
+        <ProductButton id={data} />
       </div>
 
       <style jsx>{`
