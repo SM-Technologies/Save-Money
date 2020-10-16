@@ -6,14 +6,19 @@ import ProductCompare from './ProductCompare';
 import ProductButton from './ProductButton';
 
 export default function Card({ data }) {
-  const { _id } = data;
+  const { _id, imageURL } = data;
+  console.log(data);
+  // if(imageURL==){
+
+  // }
+
   return (
     <>
       <div className='card__container' data-id={_id}>
-        <ProductImage image={data} />
-        <ProductDescription desc={data} />
-        <ProductCompare />
-        <ProductButton id={data} />
+        <ProductImage image={data}  key={_id}/>
+        <ProductDescription desc={data}  key={_id}/>
+        <ProductCompare key={_id} />
+        <ProductButton id={data}  key={_id}/>
       </div>
 
       <style jsx>{`
