@@ -1,16 +1,16 @@
-import React from 'react';
-import { Provider } from 'react-redux';
+import React from "react";
+import { Provider } from "react-redux";
 
-import LogoHeader from './HeaderLogo';
-import InputHeader from './HeaderInput';
-import NavHeader from './HeaderNav';
+import LogoHeader from "./HeaderLogo";
+import InputHeader from "./HeaderInput";
+import NavHeader from "./HeaderNav";
 
-import store from '../../redux/store';
+import store from "../../redux/store";
 
 export default function Header() {
   return (
     <>
-      <div className='container fadeInDown'>
+      <div className="container fadeInDown">
         <header>
           <LogoHeader />
           <Provider store={store}>
@@ -40,8 +40,8 @@ export default function Header() {
           header {
             grid-template: 1fr 1fr / 0.25fr 1fr 0.25fr;
             grid-template-areas:
-              'categorie logo .'
-              '. input .';
+              "categorie logo ."
+              ". input .";
             height: 100px;
             /* border-bottom: 1px solid var(--input-bg); */
           }
