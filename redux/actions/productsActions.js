@@ -1,9 +1,10 @@
 import { request } from 'graphql-request';
-import gql from 'graphql-tag'
+import gql from 'graphql-tag';
+// const endpoint = 'http://34.95.164.146/api';
 const endpoint = 'http://lootvoid.xyz/api';
 
 export const getProducts = () => async (dispatch) => {
-   const query = gql `
+  const query = gql`
     {
       getProducts {
         _id
@@ -14,7 +15,7 @@ export const getProducts = () => async (dispatch) => {
         Time
       }
     }
-  `
+  `;
   try {
     const response = await request(endpoint, query);
     dispatch({
@@ -27,20 +28,20 @@ export const getProducts = () => async (dispatch) => {
 };
 
 export const getProductById = (id) => async (dispatch) => {
- const query = gql `
-    query generalSearch ($keyword: String!){
+  const query = gql`
+    query generalSearch($keyword: String!) {
       searchItems(keyword: $keyword) {
         __typename
-          ...on Product {
-            _id
-            urlImage
-            name
-            salePrice
-            description
-          }
+        ... on Product {
+          _id
+          urlImage
+          name
+          salePrice
+          description
+        }
       }
     }
-  `
+  `;
   try {
     const response = await request(endpoint, query, id);
     dispatch({
@@ -53,23 +54,23 @@ export const getProductById = (id) => async (dispatch) => {
 };
 
 export const getProductByName = (name) => async (dispatch) => {
-    const query = gql `
-    query generalSearch ($keyword: String!){
+  const query = gql`
+    query generalSearch($keyword: String!) {
       searchItems(keyword: $keyword) {
         __typename
-          ...on Product {
-            _id
-            imageURL
-            name
-            Price
-            link
-            stars
-          }
+        ... on Product {
+          _id
+          imageURL
+          name
+          Price
+          link
+          stars
+        }
       }
     }
-  `
-  const nameProduct = { keyword: name }
-   try {
+  `;
+  const nameProduct = { keyword: name };
+  try {
     const response = await request(endpoint, query, nameProduct);
     dispatch({
       type: 'PRODUCT_BY_NAME',
