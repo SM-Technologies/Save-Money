@@ -111,20 +111,6 @@ const HomeContainer = (props) => {
           grid-area: offers;
           height:min-content;
         }
-        .offers__container > .rec .rec-pagination{
-          background-color: var(--button-bg);
-        }
-        .offers__container > .chowzb {
-          background-color: var(--button-bg);
-        }
-        .chowzb:hover:enabled, .chowzb:focus:enabled {
-          color: #fff;
-          background-color: var(--button-bg);
-          box-shadow: 0 0 2px 0 #333;
-        }
-
-
-
         .products__container {
           grid-area: products;
           display: grid;
@@ -134,7 +120,6 @@ const HomeContainer = (props) => {
           height: auto;
           width: 100%;
         }
-        
 
         @media (max-width: 320px) {
           .home__container {

@@ -3,7 +3,7 @@ import ProductDescriptionContainer from '../../components/ProductDescriptionCont
 import Layout from '../../components/layout/Layout';
 import store from '../../redux/store';
 
-const ProductDescription = (props) => {
+const ProductDescription = () => {
   return (
     <>
       <Layout>

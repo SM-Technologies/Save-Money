@@ -1,5 +1,5 @@
 // const { default: PriceComparator} = require('../price-comparator/PriceComparator');
-import PriceComparator from "../price-comparator/PriceComparator";
+import PriceComparator from '../price-comparator/PriceComparator';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useRouter } from 'next/router';
@@ -8,7 +8,7 @@ import { getProductByName } from '../../redux/actions/productsActions';
 const ProductDescriptionContainer = (props) => {
   let router = useRouter();
   const path = router.query.idProduct;
-  const id = path
+  const id = path;
   const { dataProducts, productByName } = props;
   const itemProduct = dataProducts.find((element) => element._id === id);
   const getProds = async () => {
@@ -71,6 +71,7 @@ const ProductDescriptionContainer = (props) => {
           ))}
         </div>
       </section>
+
       <style jsx>{`
         .container {
           padding: 0px 50px;
