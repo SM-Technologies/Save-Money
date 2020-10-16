@@ -77,7 +77,7 @@ export default function ProductDescription({ desc }) {
         .avalible > h5 {
           color: var(--last-update-color);
           margin: 0;
-          font-weight: 600;
+          font-weight: 500;
           font-size: 0.8em;
           /* height: 32px; */
         }
