@@ -1,5 +1,5 @@
 // const { default: PriceComparator} = require('../price-comparator/PriceComparator');
-import PriceComparator from "../price-comparator/PriceComparator";
+import PriceComparator from '../price-comparator/PriceComparator';
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useRouter } from 'next/router';
@@ -8,7 +8,7 @@ import { getProductByName } from '../../redux/actions/productsActions';
 const ProductDescriptionContainer = (props) => {
   let router = useRouter();
   const path = router.query.idProduct;
-  const id = path
+  const id = path;
   const { dataProducts, productByName } = props;
   const itemProduct = dataProducts.find((element) => element._id === id);
   const getProds = async () => {
@@ -71,6 +71,7 @@ const ProductDescriptionContainer = (props) => {
           ))}
         </div>
       </section>
+
       <style jsx>{`
         .container {
           padding: 0px 50px;
@@ -78,6 +79,7 @@ const ProductDescriptionContainer = (props) => {
           grid-template-columns: 40% 60%;
           max-width: 1100px;
           margin: 0 auto;
+          font-family: 'Oxygen', sans-serif;
         }
         .container__img {
         }
@@ -121,14 +123,14 @@ const ProductDescriptionContainer = (props) => {
         .container__btn {
           background-color: #4fb50d;
           color: #fff;
-          border-radius: 20px;
+          border-radius: 10px;
           padding: 10px 20px;
           border: none;
           cursor: pointer;
           background: linear-gradient(
             to bottom,
-            rgba(80, 181, 13, 1) 0%,
-            rgba(0, 69, 43, 1) 100%
+            rgba(62, 147, 193, 1) 0%,
+            rgba(3, 85, 130, 1) 100%
           );
         }
         .container__btn a {
@@ -142,6 +144,7 @@ const ProductDescriptionContainer = (props) => {
           max-width: 1100px;
           margin: 0 auto;
           padding: 0px 50px 2.5%;
+          font-family:  'Open Sans', sans-serif;;
         }
         .comparator {
           border: 1px solid #ccc;
