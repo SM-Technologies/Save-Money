@@ -8,10 +8,10 @@ export default function PriceComparator({data}) {
         {name}
       </p>
       <p className='container__price'>${Price}</p>
-      <p className='container__delivery'>Delivery time: 7-8 working days</p>
+      {/* <p className='container__delivery'>Delivery time: 7-8 working days</p> */}
       <div>
         <img className='container__img' src={marca} alt='logo-plataforma' />
-        <span className='container__opinions'>{stars}</span>
+        <span className='container__opinions'></span>
       </div>
       <div className='container__btn'>
           <button className='container__btn' type='button'>
@@ -21,13 +21,13 @@ export default function PriceComparator({data}) {
       <style jsx>{`
         .container {
           display: grid;
-          grid-template-columns: repeat(5, 1fr);
+          grid-template-columns: repeat(4, 1fr);
           align-items: center;
         }
         .container__description {
-          font-size: 14px;
+          font-size: 16px;
           color: #035582;
-          font-weight: 400;
+          font-weight: 500;
           text-align: center;
         }
         .container__price {
@@ -56,14 +56,14 @@ export default function PriceComparator({data}) {
           height: 31px;
           background-color: #4fb50d;
           color: #fff;
-          border-radius: 20px;
+          border-radius: 10px;
           padding: 10px 20px;
           border: none;
           cursor: pointer;
           background: linear-gradient(
             to bottom,
-            rgba(80, 181, 13, 1) 0%,
-            rgba(0, 69, 43, 1) 100%
+            rgba(62, 147, 193, 1) 0%,
+            rgba(3, 85, 130, 1) 100%
           );
           outline:none;
           margin

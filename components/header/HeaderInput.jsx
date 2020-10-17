@@ -15,8 +15,9 @@ const InputHeader = (props)  =>{
   };
   const handleClick = (event) => {
     event.preventDefault();
-    // console.log(value.search)
-    props.getProductByName(value.search);
+    if(value){
+      props.getProductByName(value.search);
+    }
   };
 
   return (
@@ -33,7 +34,9 @@ const InputHeader = (props)  =>{
         />
         <span className='input__icon'>
           {/* <button onClick={handleClick}> */}
+          <Link href="#allProducts">
             <img src={Search} alt='Icon search' onClick={handleClick}></img>
+          </Link>
           {/* </button> */}
         </span>
       </div>
