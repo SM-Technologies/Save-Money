@@ -1,9 +1,9 @@
 const INITIAL_STATE = {
   error: null,
   status: false,
-  dataProducts: '',
-  productById: '',
-  productByName: '',
+  dataProducts: [],
+  productById: [],
+  productByName: [],
 };
 
 const productsReducer = (state = INITIAL_STATE, action) => {
