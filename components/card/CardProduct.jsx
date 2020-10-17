@@ -63,7 +63,7 @@ export default function Card({ data }) {
       </>
     )
   }
-  console.log(imageURL);
+
   return (
     <>
       <div className='card__container' data-id={_id}>

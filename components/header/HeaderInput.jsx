@@ -15,8 +15,9 @@ const InputHeader = (props)  =>{
   };
   const handleClick = (event) => {
     event.preventDefault();
-    // console.log(value.search)
-    props.getProductByName(value.search);
+    if(value){
+      props.getProductByName(value.search);
+    }
   };
 
   return (

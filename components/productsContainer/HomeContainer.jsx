@@ -36,6 +36,14 @@ const HomeContainer = (props) => {
         imageURL: `${loaderGif}`,
       },
     ];
+  } 
+
+  if(allProducts.lenght==undefined){
+    allProducts = [
+      {
+        imageURL: `${loaderGif}`,
+      },
+    ];
   }
 
   const breakPoints = [
