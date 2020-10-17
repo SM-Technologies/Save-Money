@@ -1,6 +1,5 @@
 import { request } from 'graphql-request';
 import gql from 'graphql-tag';
-// const endpoint = 'http://34.95.164.146/api';
 const endpoint = 'https://lootvoid.xyz/api';
 
 export const getProducts = () => async (dispatch) => {

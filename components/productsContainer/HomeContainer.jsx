@@ -19,13 +19,13 @@ const HomeContainer = (props) => {
 
   useEffect(() => {
     getProds();
-  }, [dataProducts.lenght]);
+  }, [dataProducts.length]);
 
-  if (productByName) {
+  if (productByName.length) {
     allProducts = productByName.slice(0, 10);
   }
 
-  if (!dataProducts) {
+  if (dataProducts.length==0) {
     offers = [
       {
         imageURL: `${loaderGif}`,
@@ -37,14 +37,6 @@ const HomeContainer = (props) => {
       },
     ];
   } 
-
-  if(allProducts.lenght==undefined){
-    allProducts = [
-      {
-        imageURL: `${loaderGif}`,
-      },
-    ];
-  }
 
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
