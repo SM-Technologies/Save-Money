@@ -8,8 +8,8 @@ export default function Logo() {
   return (
     <>
       <div className='logo__container'>
-        <Link href='/'>
-          <a>
+        <Link>
+          <a href='all'>
             <img className='logo' src={Image} alt='' />
           </a>
         </Link>
