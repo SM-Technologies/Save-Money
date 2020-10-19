@@ -25,7 +25,7 @@ const HomeContainer = (props) => {
     allProducts = productByName.slice(0, 10);
   }
 
-  if (dataProducts.length==0) {
+  if (dataProducts.length == 0) {
     offers = [
       {
         imageURL: `${loaderGif}`,
@@ -36,7 +36,7 @@ const HomeContainer = (props) => {
         imageURL: `${loaderGif}`,
       },
     ];
-  } 
+  }
 
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -94,6 +94,31 @@ const HomeContainer = (props) => {
           height:100%;
           box-sizing: border-box;
         }
+         .fadeShow{
+          -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+          animation-fill-mode: both;
+          -webkit-animation-fill-mode: both;
+          -webkit-animation-name: fadeShow;
+          animation-name: fadeShow;
+        }    
+        @keyframes fadeShow {
+          0%{
+            opacity: 0;
+          }
+          25%{
+            opacity: 0.25;
+          }
+          50%{
+            opacity: 0.50;
+          }
+          75%{
+            opacity: 0.75;
+          }
+          100%{
+            opacity: 1;
+          }
+        }
         .title__container {
           grid-area: title;
         }
@@ -120,18 +145,41 @@ const HomeContainer = (props) => {
           height: auto;
           width: 100%;
         }
-
-        @media (max-width: 320px) {
+        @media (max-width: 504px) {
           .home__container {
-            grid-template: 300px 50px 0.5fr 75px 1fr 50px / 1fr;
+            grid-template: auto 50px auto 75px 1fr 50px / .05fr 1fr .05fr;
             grid-template-areas:
-              'banner'
-              'title'
-              'offers'
-              'title2'
-              'products'
-              '.';
+              '. banner .'
+              '. title .'
+              '. offers .'
+              '. title2 .'
+              '. products .'
+              '. . .';
           }
+          .banner__container {
+          grid-area: banner;
+          display:none;
+          }
+          .title__container {
+          grid-area: title;
+           margin-top:0;
+          }
+        }
+        @media (max-width: 320px) {
+          /* .home__container {
+            grid-template: auto 50px 0.5fr 75px 1fr 50px / 10px 1fr 10px;
+            grid-template-areas:
+              '. banner .'
+              '. title .'
+              '. offers .'
+              '. title2 .'
+              '. products .'
+              '. . .';
+          } */
+          .banner__container {
+          grid-area: banner;
+          display:none;
+        }
           .offers__container {
           grid-area: offers;
           display: grid;
@@ -140,35 +188,9 @@ const HomeContainer = (props) => {
         }
         .products__container {
           height: min-content;
-
         }
 
-        .fadeShow{
-          -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
-          animation-fill-mode: both;
-          -webkit-animation-fill-mode: both;
-          -webkit-animation-name: fadeShow;
-          animation-name: fadeShow;
-        }
-      
-        @keyframes fadeShow {
-          0%{
-            opacity: 0;
-          }
-          25%{
-            opacity: 0.25;
-          }
-          50%{
-            opacity: 0.50;
-          }
-          75%{
-            opacity: 0.75;
-          }
-          100%{
-            opacity: 1;
-          }
-        }
+       
       `}</style>
     </>
   );

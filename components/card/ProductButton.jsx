@@ -36,6 +36,7 @@ export default function ProductButtons({ id }) {
             grid-area: see-product;
             place-self: center;
             width: 90%;
+            border-radius: 20px;
           }
         }
       `}</style>

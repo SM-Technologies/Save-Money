@@ -66,30 +66,29 @@ const Footer = () => {
       </section>
 
       {/* Stores */}
-      <section className='stores' id="stores">
+      <section className='stores' id='stores'>
         <div className='text_prices'>Compare Prices of:</div>
         <div className='logos__stores'>
-          <a href='https://www.aliexpress.com/' target='_blank'>
-            <img src={LogoAli} alt='Logo Ali Express' />
-          </a>
-        </div>
-
-        <div className='logos__stores'>
-          <a href='https://www.amazon.com/' target='_blank'>
-            <img src={LogoAmazon} alt='Logo Amazon' />
-          </a>
-        </div>
-
-        <div className='logos__stores'>
-          <a href='https://www.ebay.com' target='_blank'>
-            <img src={LogoEbay} alt='Logo ebay' />
-          </a>
-        </div>
-
-        <div className='logos__stores'>
-          <a href='https://www.mercadolibre.com.co' target='_blank'>
-            <img src={LogoMercado} alt='Logo Mercado Libre' />
-          </a>
+          <Link href='https://www.aliexpress.com/'>
+            <a target='_blank'>
+              <img src={LogoAli} alt='Logo Ali Express' />
+            </a>
+          </Link>
+          <Link href='https://www.amazon.com/'>
+            <a target='_blank'>
+              <img src={LogoAmazon} alt='Logo Amazon' />
+            </a>
+          </Link>
+          <Link href='https://www.ebay.com'>
+            <a target='_blank'>
+              <img src={LogoEbay} alt='Logo ebay' />
+            </a>
+          </Link>
+          <Link href='https://www.mercadolibre.com'>
+            <a target='_blank'>
+              <img src={LogoMercado} alt='Logo Mercado Libre' />
+            </a>
+          </Link>
         </div>
       </section>
 
@@ -243,23 +242,30 @@ const Footer = () => {
           margin: 5px auto;
         }
 
-        .text_prices {
-          color: #f7b733;
-          margin-bottom: 30px;
-        }
-
         .stores {
+          display: grid;
+          grid-template: auto 1fr 20px/1fr;
+          grid-template-areas:
+            'title'
+            'stores'
+            '.';
           margin: 0 auto;
           text-align: center;
-          padding: 40px;
+          max-width: 1100px;
+          width: 100%;
+        }
+        .text_prices {
+          color: #f7b733;
+          margin: 10px 0;
+          grid-area: title;
         }
 
         .logos__stores {
-          display: contents;
-          display: contents;
-          margin: 0 auto;
+          grid-area: stores;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           transition: all 300ms;
-          display: inline-block;
         }
 
         .logos__stores:hover {
@@ -267,9 +273,9 @@ const Footer = () => {
         }
 
         .stores .logos__stores img {
-          width: 50%;
-          height: 50%;
-          max-width: 840px;
+          width: 100%;
+          object-fit: contain;
+          /* max-width: 840px; */
         }
 
         /* responsive */
@@ -310,6 +316,14 @@ const Footer = () => {
           }
           .copyright {
             grid-area: copyright;
+          }
+          .stores {
+            display: grid;
+            grid-template: auto 1fr 20px/0.05fr 1fr 0.05fr;
+            grid-template-areas:
+              '. title .'
+              '. stores . '
+              '. . .';
           }
         }
 

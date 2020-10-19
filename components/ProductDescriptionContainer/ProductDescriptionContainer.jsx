@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useRouter } from 'next/router';
 import { getProductByName } from '../../redux/actions/productsActions';
+import Link from 'next/link';
 
 const ProductDescriptionContainer = (props) => {
   let router = useRouter();
@@ -46,31 +47,26 @@ const ProductDescriptionContainer = (props) => {
   return (
     <>
       <div className='container'>
-        <section>
-          <div>
-            <img src={itemProduct.imageURL} alt='Descripcion del producto' />
-          </div>
-        </section>
-        <section>
-          <div>
-            <h1 className='container__title'>{itemProduct.name}</h1>
-            <h2 className='container__price'>${itemProduct.Price}</h2>
-            <p className='container__price-description'>
-              Prices and shipping USD ${itemProduct.Price} delivery available
-              availability in stock
-            </p>
-          </div>
-          <div>
-            <p className='container__title-description'>Description</p>
-            <p className='container__description'>{itemProduct.name}</p>
-          </div>
+        <div className='container__img'>
+          <img src={itemProduct.imageURL} alt='Descripcion del producto' />
+        </div>
+        <div className='container__description'>
+          <h1 className='container__title'>{itemProduct.name}</h1>
+          <h2 className='container__price'>${itemProduct.Price}</h2>
+          <p className='container__price-description'>
+            Prices and shipping USD ${itemProduct.Price} delivery
+            <strong> availability </strong> in stock
+          </p>
+
+          <p className='container__title-description'>Description:</p>
+          <p className='container__description'>{itemProduct.name}</p>
           <button className='container__btn' type='button'>
-            <a className='' href={itemProduct.link} target='blanck'>
-              SEE PRODUCT
-            </a>
+            <Link className='' href={itemProduct.link} target='_blank'>
+              <a target='_blank'>SEE PRODUCT</a>
+            </Link>
             {/* SEE PRODUCT */}
           </button>
-        </section>
+        </div>
       </div>
       <section className='wrapper__comparator'>
         <h3>Price comparator</h3>
@@ -84,56 +80,58 @@ const ProductDescriptionContainer = (props) => {
 
       <style jsx>{`
         .container {
-          padding: 0px 50px;
           display: grid;
-          grid-template-columns: 40% 60%;
+          grid-template: 1fr/ 45% 55%;
+          grid-template-areas: 'imagen contenido';
+
           max-width: 1100px;
+          place-self: center;
           margin: 0 auto;
           font-family: 'Oxygen', sans-serif;
+          gap: 5px;
         }
         .container__img {
+          grid-area: imagen;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
-        .container__img img {
-          width: 70px;
-          height: 70px;
-          margin: 0px 5px;
-          padding: 5px;
-          border: solid 0.5px #ccc;
-          border-radius: 5px;
-          cursor: pointer;
+        .container__img > img {
+          width: inherit;
+          height: calc(100% - 10px);
+          object-fit: contain;
         }
-        .container__pricehistory {
-          margin: 60px 0px;
-        }
-        .container__pricehistory span {
-          text-align: center;
+        .container__description {
+          box-sizing: border-box;
+          grid-area: contenido;
+          color: #3e93c1;
+          font-size: 1em;
         }
         .container__title {
-          font-size: 24px;
+          font-size: 1.5em;
           font-weight: 700;
           color: #035582;
         }
         .container__price {
-          font-size: 28px;
+          font-size: 2em;
           font-weight: 700;
           color: #035582;
         }
         .container__price-description {
           font-weight: 700;
-          color: #035582;
+          color: #4fb50d;
+        }
+        .container__price-description > strong {
+          color: #2a5400c8;
         }
         .container__title-description {
+          margin-top: 5%;
+          font-size: 1em;
           color: #035582;
-          font-size: 16px;
         }
-        .container__description {
-          color: #3e93c1;
-          font-size: 16px;
-        }
+
         .container__btn {
-          background-color: #4fb50d;
-          color: #fff;
-          border-radius: 10px;
+          border-radius: 20px;
           padding: 10px 20px;
           border: none;
           cursor: pointer;
@@ -145,24 +143,55 @@ const ProductDescriptionContainer = (props) => {
         }
         .container__btn a {
           color: white;
+          font-weight: 600;
           text-decoration: none;
+          font-size: 0.9em;
         }
-        .container__btn:hover {
-          background-color: #00452a;
-        }
+
         .wrapper__comparator {
           max-width: 1100px;
           margin: 0 auto;
-          padding: 0px 50px 2.5%;
-          font-family:  'Open Sans', sans-serif;;
+          font-family: 'Open Sans', sans-serif;
+        }
+        .wrapper__comparator > h3 {
+          color: #f7b733;
+          grid-area: title;
         }
         .comparator {
+          grid-area: comparator;
+          margin-bottom: 20px;
+          padding: 20px;
           border: 1px solid #ccc;
           border-radius: 10px;
-          padding: 20px;
         }
-        .wrapper__comparator h3 {
-          color: #f7b733;
+
+        @media (max-width: 504px) {
+          .container {
+            grid-template: auto 1fr/0.05fr 1fr 0.05fr;
+            grid-template-areas:
+              '. imagen .'
+              '. contenido .';
+          }
+          .container__description {
+            place-self: center;
+            box-sizing: border-box;
+            color: #3e93c1;
+            font-size: 1em;
+            text-align: center;
+          }
+          .wrapper__comparator {
+            display: grid;
+            grid-template: auto 1fr/0.05fr 1fr 0.05fr;
+            grid-template-areas:
+              '. title .'
+              '. comparator .';
+          }
+          .comparator {
+            grid-area: comparator;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+          }
         }
       `}</style>
     </>
