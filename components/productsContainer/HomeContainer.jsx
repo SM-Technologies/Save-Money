@@ -62,7 +62,7 @@ const HomeContainer = (props) => {
           </Carousel>
         </div>
         <div className='title2__container'>
-          <h2 name='all'>All Products</h2>
+          <h2 id='jumper'>All Products</h2>
         </div>
         <div className='products__container' id='allProducts'>
           {allProducts.map((prod) => (

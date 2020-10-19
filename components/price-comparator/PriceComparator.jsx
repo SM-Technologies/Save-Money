@@ -13,7 +13,7 @@ export default function PriceComparator({ data }) {
       </div>
       <div className='container__btn'>
         <button className='container__btn' type='button'>
-          <Link className='' href={link}>
+          <Link href={link}>
             <a target='_blank'>SEE PRODUCT</a>
           </Link>
         </button>
