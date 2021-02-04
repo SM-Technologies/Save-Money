@@ -1,6 +1,6 @@
 import { request } from 'graphql-request';
 import gql from 'graphql-tag';
-const endpoint = 'https://lootvoid.xyz/api';
+const endpoint = 'https://samotech.herokuapp.com/api';
 
 export const getProducts = () => async (dispatch) => {
   const query = gql`
