@@ -7,6 +7,7 @@ import ProductButton from './ProductButton';
 
 export default function Card({ data }) {
   const { _id, imageURL } = data;
+  // Why use this validation?
   if(imageURL=='/_next/static/images/loader-a74775dc5e59885e1012939118aa60e2.gif'){
     return (
       <>
@@ -59,7 +60,7 @@ export default function Card({ data }) {
           text-decoration: none;
         }
       `}</style>
-      
+
       </>
     )
   }

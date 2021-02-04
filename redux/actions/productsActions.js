@@ -2,6 +2,8 @@ import { request } from 'graphql-request';
 import gql from 'graphql-tag';
 const endpoint = 'https://samotech.herokuapp.com/api';
 
+// You should use machine states for reducers
+
 export const getProducts = () => async (dispatch) => {
   const query = gql`
     {

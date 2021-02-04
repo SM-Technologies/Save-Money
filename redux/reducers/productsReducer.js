@@ -19,7 +19,7 @@ const productsReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         productById: action.payload,
-        loading: false,
+        loading: false, // loading there is not in INITIAL_STATE
         error: null,
       };
     case 'PRODUCT_BY_NAME':

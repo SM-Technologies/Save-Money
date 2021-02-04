@@ -10,6 +10,7 @@ import { getProducts } from '../../redux/actions/productsActions';
 const HomeContainer = (props) => {
   const { dataProducts, productByName } = props;
 
+  // Why apply a slice to dataProducts?
   let offers = dataProducts.slice(1782, 1792);
   let allProducts = dataProducts.slice(1792, 1812);
 
@@ -101,7 +102,7 @@ const HomeContainer = (props) => {
           -webkit-animation-fill-mode: both;
           -webkit-animation-name: fadeShow;
           animation-name: fadeShow;
-        }    
+        }
         @keyframes fadeShow {
           0%{
             opacity: 0;
@@ -190,7 +191,7 @@ const HomeContainer = (props) => {
           height: min-content;
         }
 
-       
+
       `}</style>
     </>
   );
